@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    /* box-sizing est appliqué à tous les éléments */
+ }
+
+ $couleur_primaire :#9356DC;
+ $couleur_secondaire : #FF79DA;
+ $couleur_Tertiaire : #99E2D0;
+ $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire);
+ $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);
+
+ #srch{ // Header Accueuil //
+     background-color: $couleur_Tertiaire;
+     text-align: center;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     padding-left: 10px;
+     padding-right: 10px;
+     img{
+         width: 196px;
+         height: 34px;
+     }
+     h1{
+         color:$couleur_secondaire ;
+         -webkit-text-stroke: 1px;
+         -webkit-text-stroke-color: $couleur_primaire;
+     }
+     #srch__Explorer{
+        color:white;
+        font-weight: bold;
+        padding-bottom: 10px;
+        padding-top:10px;
+        background:$btn-deb;
+        border-radius: 20px;
+        cursor: pointer;
+        animation: btn 500ms 1000ms 3; //animation du bouton "Explorer.." au lancement de la page (*3)//
+        transition : transform 300ms, 150ms;
+        &:hover { //animation du bouton "Explorer.." au survole//
+            transform: scale(1.1);
+            background: $btn-fin;
+            box-shadow: 0px 5px 20px #999;
+        }
+     }
+ }
+
+ @keyframes btn { //Keyframes pour l'animation du bouton au lancement de la page//
+     0% {
+         transform :scale(1)
+     }
+     50%{
+         transform: scale(1.1);
+     }
+     100%{
+         transform: scale(1)
+     }
+
+ }
