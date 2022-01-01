@@ -32,8 +32,8 @@
         padding: 10px;
      }
      h1{ //titre header //
-         color:$couleur_secondaire ;
-         -webkit-text-stroke: 1px;
+         color:darken($couleur_primaire,10) ;
+         -webkit-text-stroke: 1.5px;
          -webkit-text-stroke-color: $couleur_primaire;
      }
      #srch__Explorer{ // bouton "Trouvre votre restaurant" header//
@@ -43,9 +43,9 @@
         background:$btn-deb;
         border-radius: 20px;
         cursor: pointer;
-        animation: btn 500ms 1000ms 3; //animation du bouton "Explorer.." au lancement de la page (*3)//
+        animation: btn 500ms 1000ms 3; //animation du bouton "Trouvez votre réstaurant" au lancement de la page (*3)//
         transition : transform 300ms, 150ms;
-        &:hover { //animation du bouton "Explorer.." au survole//
+        &:hover { //animation du bouton "Trouvez votre réstaurant" au survole//
             transform: scale(1.1);
             background: $btn-fin;
             box-shadow: 0px 5px 20px #999;

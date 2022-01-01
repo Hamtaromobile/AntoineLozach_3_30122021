@@ -26,8 +26,8 @@
   padding: 10px;
 }
 #srch h1 {
-  color: #FF79DA;
-  -webkit-text-stroke: 1px;
+  color: #782cd3;
+  -webkit-text-stroke: 1.5px;
   -webkit-text-stroke-color: #9356DC;
 }
 #srch #srch__Explorer {
