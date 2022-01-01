@@ -5,16 +5,25 @@
 }
 
 #srch {
-  background-color: #99E2D0;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
 }
+#srch #__logo {
+  background-color: #71d7be;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
 #srch img {
   width: 196px;
   height: 34px;
+}
+#srch #__bgrnd_sub {
+  background-color: #99E2D0;
+  margin-top: -16px;
+  padding: 10px;
 }
 #srch h1 {
   color: #FF79DA;
@@ -24,8 +33,7 @@
 #srch #srch__Explorer {
   color: white;
   font-weight: bold;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding: 10px;
   background: linear-gradient(#9356DC, #FF79DA);
   border-radius: 20px;
   cursor: pointer;

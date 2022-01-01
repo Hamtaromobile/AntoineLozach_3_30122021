@@ -9,16 +9,27 @@
  $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire);
  $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);
 
+ 
+
  #srch{ // Header Accueuil //
-     background-color: $couleur_Tertiaire;
      text-align: center;
      padding-top: 20px;
      padding-bottom: 20px;
      padding-left: 10px;
      padding-right: 10px;
+     #__logo{
+        background-color: darken( $couleur_Tertiaire,10);
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
      img{
          width: 196px;
          height: 34px;
+     }
+     #__bgrnd_sub{
+        background-color: $couleur_Tertiaire;
+        margin-top: -16px;
+        padding: 10px;
      }
      h1{
          color:$couleur_secondaire ;
@@ -28,8 +39,7 @@
      #srch__Explorer{
         color:white;
         font-weight: bold;
-        padding-bottom: 10px;
-        padding-top:10px;
+        padding:10px;
         background:$btn-deb;
         border-radius: 20px;
         cursor: pointer;
