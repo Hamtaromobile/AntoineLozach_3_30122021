@@ -8,8 +8,8 @@
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  /*padding-left: 10px;
+  padding-right: 10px;*/
 }
 #srch #__logo {
   background-color: #71d7be;
@@ -25,12 +25,9 @@
   margin-top: -16px;
   padding: 10px;
 }
-#srch #__map {
-  font-size: 1.5em;
-}
 #srch h1 {
-  color: #782cd3;
-  -webkit-text-stroke: 1.5px;
+  color: #FF79DA;
+  -webkit-text-stroke: 1px;
   -webkit-text-stroke-color: #9356DC;
 }
 #srch #srch__Explorer {
@@ -47,7 +44,6 @@
   transform: scale(1.1);
   background: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 0px 5px 20px #999;
-  filter: opacity(0.9);
 }
 
 @keyframes btn {
@@ -60,6 +56,60 @@
   100% {
     transform: scale(1);
   }
+}
+#guide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #99E2D0;
+}
+#guide #h1_guide {
+  background-color: #71d7be;
+}
+#guide .btn_guide {
+  background: linear-gradient(#9356DC, #FF79DA);
+  text-align: center;
+  justify-content: space-evenly;
+  display: flex;
+  padding: 10px;
+  width: 270px;
+  height: 60px;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 30px;
+  position: relative;
+  transition: transform 300ms, 150ms;
+}
+#guide .btn_guide:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 20px #999;
+}
+#guide .btn_guide .__nb_btn {
+  color: #782cd3;
+  border: 1px solid #9356DC;
+  background-color: #FF79DA;
+  border-radius: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: absolute;
+  margin-top: 2px;
+  margin-left: -270px;
+  font-weight: bold;
+}
+#guide .btn_guide .__ico_btn {
+  position: absolute;
+  margin-left: -210px;
+  margin-top: 8px;
+}
+#guide .btn_guide .__txt_btn {
+  position: absolute;
+  margin-left: 20px;
+  padding-bottom: 8px;
+  width: 200px;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

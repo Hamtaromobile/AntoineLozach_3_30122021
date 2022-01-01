@@ -15,57 +15,109 @@
      text-align: center;
      padding-top: 20px;
      padding-bottom: 20px;
-     padding-left: 10px;
-     padding-right: 10px;
-     #__logo{ //couleur de fond pour le logo//
+     /*padding-left: 10px;
+     padding-right: 10px;*/
+     #__logo{
         background-color: darken( $couleur_Tertiaire,10);
         padding-bottom: 20px;
         padding-top: 20px;
     }
-     img{ //taille logo//
+     img{
          width: 196px;
          height: 34px;
      }
-     #__bgrnd_sub{ //couleur de fond header//
+     #__bgrnd_sub{
         background-color: $couleur_Tertiaire;
         margin-top: -16px;
         padding: 10px;
      }
-     #__map{
-         font-size: 1.5em;
-     }
-     h1{ //titre header //
-         color:darken($couleur_primaire,10) ;
-         -webkit-text-stroke: 1.5px;
+     h1{
+         color:$couleur_secondaire ;
+         -webkit-text-stroke: 1px;
          -webkit-text-stroke-color: $couleur_primaire;
      }
-     #srch__Explorer{ // bouton "Trouvre votre restaurant" header//
+     #srch__Explorer{
         color:white;
         font-weight: bold;
         padding:10px;
         background:$btn-deb;
         border-radius: 20px;
         cursor: pointer;
-        animation: btn 500ms 1000ms 3; //animation du bouton "Trouvez votre réstaurant" au lancement de la page (*3)//
+        animation: btn 500ms 1000ms 3; //animation du bouton "Explorer.." au lancement de la page (*3)//
         transition : transform 300ms, 150ms;
-        &:hover { //animation du bouton "Trouvez votre réstaurant" au survole//
+        &:hover { //animation du bouton "Explorer.." au survole//
             transform: scale(1.1);
             background: $btn-fin;
             box-shadow: 0px 5px 20px #999;
-            filter: opacity(0.9);
         }
      }
  }
 
  @keyframes btn { //Keyframes pour l'animation du bouton au lancement de la page//
-     0% {
-         transform :scale(1)
-     }
-     50%{
-         transform: scale(1.1);
-     }
-     100%{
-         transform: scale(1)
-     }
+        0% {
+            transform :scale(1);
+        }
+        50%{
+            transform: scale(1.1);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }  
 
- }
+     #guide{ //Section correspondant au "guide d'utilisation"//
+         text-align: center;
+         display: flex;     
+         flex-direction: column;
+         background-color: $couleur_Tertiaire;
+         #h1_guide{ //Titre du "gide d'utilisation"//
+             background-color: darken( $couleur_Tertiaire,10);
+         }
+         .btn_guide{ //Conteneur des boutons du "guide d'utilisation"//
+             background: $btn-deb;
+             text-align: center;
+             justify-content: space-evenly;
+             display: flex;
+             padding:10px;
+             width: 270px;
+             height: 60px;
+             margin:auto;
+             margin-bottom: 15px;
+             margin-top: 15px;
+             border-radius: 30px;
+             position: relative;
+             transition : transform 300ms, 150ms;
+             &:hover{ //Survol des boutons du "guide d'utilisation"//
+                transform: scale(1.1);
+                box-shadow: 0px 5px 20px #999;
+             }
+             .__nb_btn{ //Nombre des boutons du "guide d'utilisation"//     
+                color: darken($couleur_primaire,10);  
+                border:1px solid $couleur_primaire;
+                background-color: $couleur_secondaire;
+                border-radius: 30px;
+                padding-left : 8px;
+                padding-right: 8px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                position: absolute;
+                margin-top: 2px;
+                margin-left:-270px;
+                font-weight: bold;
+            }
+            .__ico_btn{ //icone des boutons du "guide d'utilisation"//
+                position: absolute;
+                margin-left: -210px;
+                margin-top:8px;
+            }
+            .__txt_btn{ //texte des boutons du "guide d'utilisation"//
+                position:absolute;
+                margin-left: 20px;
+                padding-bottom: 8px;
+                width: 200px;
+                font-weight: bold;
+
+            }
+         }    
+     }
+ 
