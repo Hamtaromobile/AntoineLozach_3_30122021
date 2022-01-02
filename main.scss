@@ -116,8 +116,42 @@
                 padding-bottom: 8px;
                 width: 200px;
                 font-weight: bold;
-
             }
          }    
      }
+
+     #sect_card_acc
+     {
+         background-color: $couleur_Tertiaire;
+         text-align: center;
+         h1{
+             background-color: darken( $couleur_Tertiaire,10);
+             padding-bottom: 20px;
+             padding-top: 20px;
+         }
+         .card_acc{
+             margin: auto;
+             text-align: center;
+             width: 340px;
+             height: 300px;
+             background-color: $couleur_secondaire;
+             border-radius: 20px;
+             margin-bottom: 20px;
+            .__img_card_acc{
+               position: relative;
+                width:340px;
+                height:200px;
+                overflow: hidden;
+                border-radius: 20px 20px 0 00px;
+                img {
+                   width:100%;
+                   position:absolute;
+                   top: 50%;
+                   left: 50%;
+                   transform: translate(-50%, -50%);
+                }
+            }
+        }
+     }
+     
  
