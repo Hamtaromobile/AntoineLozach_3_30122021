@@ -8,47 +8,87 @@
  $couleur_Tertiaire : #99E2D0;
  $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire);
  $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);
-
+ $color_ico: $couleur_Tertiaire;
  
+
+ .lds-dual-ring { //loader //
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #dfc;
+    border-color: #dfc transparent #dfc transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+
+  @keyframes lds-dual-ring { //Key frame correspondant au loader//
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  #corp_page{
+      animation: loading 5000ms;
+  }
+
+  @keyframes loading {
+      0% {
+        filter: opacity(0);
+       /* display: none;*/
+        animation-duration: 5000ms;
+      }
+      50% {
+          /*animation-delay: 5000ms;*/
+        /*  display: block;*/
+        filter: opacity(1);
+      }
+  }
 
  #srch{ // Header Accueuil //
      text-align: center;
-     padding-top: 20px;
-     padding-bottom: 20px;
-     /*padding-left: 10px;
-     padding-right: 10px;*/
-     #__logo{
+     #__logo{ //conteneur du logo "ohmyfood"
         background-color: darken( $couleur_Tertiaire,10);
         padding-bottom: 20px;
         padding-top: 20px;
     }
-     img{
+     img{//logo "ohmyfood"
          width: 196px;
          height: 34px;
      }
-     #__bgrnd_sub{
+     #__bgrnd_sub{ //header sans le logo//
         background-color: $couleur_Tertiaire;
         margin-top: -16px;
         padding: 10px;
      }
-     h1{
-         color:$couleur_secondaire ;
+     h1{ //titre du header//
+         color:darken($couleur_primaire ,10) ;
          -webkit-text-stroke: 1px;
          -webkit-text-stroke-color: $couleur_primaire;
      }
-     #srch__Explorer{
+     #srch__Explorer{ //input header//
         color:white;
         font-weight: bold;
         padding:10px;
         background:$btn-deb;
         border-radius: 20px;
         cursor: pointer;
-        animation: btn 500ms 1000ms 3; //animation du bouton "Explorer.." au lancement de la page (*3)//
+        animation: btn 500ms 1000ms 3; //animation du bouton "Trouvez votre restaurant" au lancement de la page (*3)//
         transition : transform 300ms, 150ms;
-        &:hover { //animation du bouton "Explorer.." au survole//
+        &:hover { //animation du bouton "Trouvez voter restaurant" au survole//
             transform: scale(1.1);
             background: $btn-fin;
             box-shadow: 0px 5px 20px #999;
+            filter: opacity(0.9);
         }
      }
  }
@@ -70,7 +110,7 @@
          display: flex;     
          flex-direction: column;
          background-color: $couleur_Tertiaire;
-         #h1_guide{ //Titre du "gide d'utilisation"//
+         #h1_guide{ //Titre du "guide d'utilisation"//
              background-color: darken( $couleur_Tertiaire,10);
          }
          .btn_guide{ //Conteneur des boutons du "guide d'utilisation"//
@@ -87,9 +127,11 @@
              border-radius: 30px;
              position: relative;
              transition : transform 300ms, 150ms;
+             cursor: pointer;
              &:hover{ //Survol des boutons du "guide d'utilisation"//
                 transform: scale(1.1);
                 box-shadow: 0px 5px 20px #999;
+                filter: opacity(0.9);
              }
              .__nb_btn{ //Nombre des boutons du "guide d'utilisation"//     
                 color: darken($couleur_primaire,10);  
@@ -120,16 +162,18 @@
          }    
      }
 
-     #sect_card_acc
+     #sect_card_acc //Section correspondant aux cards d'acceuil//
      {
+         margin-top:-21px;
          background-color: $couleur_Tertiaire;
          text-align: center;
-         h1{
+         padding-bottom: 3px;
+         h1{ //Titre de la section correspondant aux cards d'accueil//
              background-color: darken( $couleur_Tertiaire,10);
              padding-bottom: 20px;
              padding-top: 20px;
          }
-         .card_acc{
+         .card_acc{ //Conteneur des cards//
              margin: auto;
              text-align: center;
              width: 340px;
@@ -137,21 +181,114 @@
              background-color: $couleur_secondaire;
              border-radius: 20px;
              margin-bottom: 20px;
-            .__img_card_acc{
+             position: relative;
+             overflow: hidden;
+            .__img_card_acc{ //Conteneur des images des cards//
                position: relative;
                 width:340px;
                 height:200px;
                 overflow: hidden;
-                border-radius: 20px 20px 0 00px;
-                img {
-                   width:100%;
+                border-radius: 20px 20px 0px 0px;
+                img { //Images des cards//
+                   width:100%; 
                    position:absolute;
                    top: 50%;
                    left: 50%;
                    transform: translate(-50%, -50%);
                 }
             }
+            .__new_card_acc{ //Encadré "Nouveau" des cards//
+                color:$couleur_primaire;
+                background-color: darken($couleur_primaire,25);
+                border-radius: 30px;
+                position: absolute;
+                top : 20px;
+                left : 220px;
+                width: 90px;
+                height: 40px;
+                padding-bottom: 50px;
+            }
+            .__tt_card_acc{ //Titre des cards//
+                color: darken($couleur_secondaire,60);
+                position: absolute;
+                top:190px;
+                left : 10px;
+            }
+            .__p_card_acc{ //Texte des cards//
+                color: darken($couleur_secondaire,50);
+                position: absolute;
+                top:230px;
+                left:10px
+            }
+            .__ico_card_acc{ //Icones "coeur" des cards//
+                color:$color_ico;
+                position: absolute;
+                font-size: 2.5em;
+                bottom: 25px;
+                left: 250px;
+                cursor: pointer;
+                &:hover{ //Animation de l'icone au survol//
+                    animation: ico_card_acc_hov 3000ms infinite;
+                }
+                &:active{
+                    @if ($color_ico == $couleur_Tertiaire){
+                    $color_ico: $couleur_primaire;
+                    }
+
+                    @else {
+                    $color_ico: $couleur_Tertiaire;
+                    }
+                }
+            }
         }
      }
      
+     @keyframes ico_card_acc_hov{ //Keyframes pour l'animation au survole de l'icone des cards//
+        30%{
+            scale: (2);
+            animation-timing-function: ease-in-out;
+        }
+        50%{
+            scal:(1);
+        }
+        70%{
+            transform: rotate(1turn);
+            animation-timing-function: ease-in-out;
+        }
+        100%{
+            transform: rotate(-1turn);
+            animation-timing-function: ease-in-out;
+        }
+     }
+
+     #footer{ //pied de page//
+         background-color: darken($couleur_Tertiaire,10);
+         text-align: center;
+         padding-top: 10px;
+         padding-bottom:10px;
+         #logo_footer img { //logo "ohmyfood" du pied de page//
+             width: 196px;
+             height: 34px;
+             color:darken($couleur_Tertiaire,70);
+         }
+         ul{ //liste de navigation du pied de page//
+             list-style-type: none;
+         }
+         li{ //éléments de la liste du pied de page//
+            text-align: left;
+            margin-bottom: 5px;
+            .txt_ft{
+                padding-left:30px;
+                margin-top: -18px;
+            }
+            &:hover{
+                text-decoration: underline;
+                color:darken($couleur_Tertiaire,50);
+            }
+         }
+         a {  //élément de navigation du pied de page//
+            text-decoration: none;
+            color:darken($couleur_Tertiaire,50);
+         }
+     }
  
