@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+    // box-sizing est appliqué à tous les éléments //
+ }
+
+    $couleur_primaire :#9356DC;
+    $couleur_secondaire : #FF79DA;
+    $couleur_Tertiaire : #99E2D0;
+    $couleur_tert_tt_light : lighten($couleur_Tertiaire,10%); // Couleur Tertiaire lighten background titre//
+    $couleur_tert_light :lighten($couleur_Tertiaire,15%); //Couleur tertiaire lighten background sections/articles//
+    $couleur_sec_light: lighten($couleur_primaire,25%); //Couleur primaire lighten card//
+    $couleur_prim_dark: darken($couleur_secondaire,60); //Couleur primaire darken du texte pour les cards//
+    $couleur_tert_dark:darken($couleur_Tertiaire,50);//Couleur tertiaire darken du logo check des cards//
+    $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire); //Couleur boutons //
+    $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);//Couleur bouton modifié//
+
+
+    
+    #hdr_menu{//Section correspondant l'en-tête des menus//
+        text-align: center;
+        #__logo_menu{ //Conteneur du logo "ohmyfood"
+            background-color:  $couleur_tert_tt_light;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        #__img_menu{ //Conteneur de l'image du menu//
+        margin: auto;
+        width:400px;
+        height:290px;
+        overflow: hidden;
+        position: relative;
+        img {  //Image du menu//
+            width:100%; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+         }
+        }
+    }
+
+    .main_menu{ //Section correspondant aux menus //
+        background-color:  $couleur_tert_light;
+        text-align: center;
+        h1{  //Titre "À la française" //
+            background-color: $couleur_tert_tt_light;
+        }
+        h2{ //Titre des cards//
+            margin-top: 50px;
+        }  
+        .card_menu{ //Card des menus //
+            margin: auto;
+            position: relative;
+            background-color: $couleur_sec_light;
+            border-radius: 20px;
+            width: 350px;
+            height: 70px;
+            box-shadow: 0px 5px 20px #999;
+            margin-top: 20px;
+            .__h2_card_menu{ //Titre des cards des menus//
+                color: $couleur_prim_dark;
+                position: absolute;
+                margin-top: -42px;
+                margin-left: 10px;
+            }
+            .__txt_card_menu{//Texte des cards des menus //
+                color :  $couleur_prim_dark;
+                position: absolute;
+                margin-top: 25px;
+                margin-left: 10px;
+            }
+            .__prix_card_menu{//Prix des cards des menus//
+                color :  $couleur_prim_dark;
+                position: absolute;
+                margin-top: 10px;
+                margin-left: 300px;
+            }
+            .__check_card_menu{//Icone check des cards des menus//
+                color:$couleur_tert_dark;
+                background: $couleur_tert_light;
+                background: 1px solid $couleur_tert_light;
+                padding-left: 5px;
+                padding-right: 5px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                border-radius: 50%;
+                position: absolute;
+                margin-top: 25px;
+                margin-left: 300px;
+            }
+
+        }
+    }
+
+

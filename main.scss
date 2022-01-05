@@ -7,7 +7,7 @@
  $couleur_secondaire : #FF79DA;
  $couleur_Tertiaire : #99E2D0;
  $couleur_tert_tt_light : lighten($couleur_Tertiaire,10%); // Couleur Tertiaire lighten background titre//
- $couleur_tert_light :lighten($couleur_Tertiaire,15%); //Couelur tertiaire lighten background sections/articles//
+ $couleur_tert_light :lighten($couleur_Tertiaire,15%); //Couleur tertiaire lighten background sections/articles//
  $couleur_sec_light: lighten($couleur_primaire,25%); //Couleur primaire lighten card//
  $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire); //Couleur boutons //
  $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);//Couleur bouton modifié//
