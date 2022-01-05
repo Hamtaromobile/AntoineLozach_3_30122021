@@ -1,34 +1,45 @@
 *{
     box-sizing: border-box;
-    /* box-sizing est appliqué à tous les éléments */
+    // box-sizing est appliqué à tous les éléments //
  }
 
  $couleur_primaire :#9356DC;
  $couleur_secondaire : #FF79DA;
  $couleur_Tertiaire : #99E2D0;
- $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire);
- $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);
+ $couleur_tert_tt_light : lighten($couleur_Tertiaire,10%); // Couleur Tertiaire lighten background titre//
+ $couleur_tert_light :lighten($couleur_Tertiaire,15%); //Couelur tertiaire lighten background sections/articles//
+ $couleur_sec_light: lighten($couleur_primaire,25%); //Couleur primaire lighten card//
+ $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire); //Couleur boutons //
+ $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);//Couleur bouton modifié//
  $color_ico: $couleur_Tertiaire;
  
-
  .lds-dual-ring { //loader //
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-  }
+    animation-name:load_opac;
+    animation-duration: 3000ms;
+    opacity: 0;
+ }
+
+ @keyframes load_opac{ //Animation d'opacité pour le load//
+     from{
+         opacity:1;
+     }
+     to{
+         opacity:0;
+     }
+ }
+
   .lds-dual-ring:after {
     content: " ";
-    display: block;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    border: 6px solid #dfc;
-    border-color: #dfc transparent #dfc transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
+    border: 10px solid #dfc;
+    border-color: $couleur_primaire  transparent  $couleur_secondaire transparent  ;
+    animation: lds-dual-ring 1500ms linear infinite;
   }
 
-  @keyframes lds-dual-ring { //Key frame correspondant au loader//
+  @keyframes lds-dual-ring { //Keyframes correspondant au loader//
     0% {
       transform: rotate(0deg);
     }
@@ -37,27 +48,27 @@
     }
   }
 
-  #corp_page{
-      animation: loading 5000ms;
-  }
-
-  @keyframes loading {
+  @keyframes loading { //Keyframes pour afficher le loader au démarrage de la page//
       0% {
         filter: opacity(0);
-       /* display: none;*/
-        animation-duration: 5000ms;
+      }
+      20% {
+        filter: opacity(0);
       }
       50% {
-          /*animation-delay: 5000ms;*/
-        /*  display: block;*/
         filter: opacity(1);
       }
   }
 
+  #corp_page{ //Ensemble des sections et articles sans le loader//
+    animation: loading 3000ms;
+    margin-top: -224px;
+}
+
  #srch{ // Header Accueuil //
      text-align: center;
      #__logo{ //conteneur du logo "ohmyfood"
-        background-color: darken( $couleur_Tertiaire,10);
+        background-color:  $couleur_tert_tt_light;
         padding-bottom: 20px;
         padding-top: 20px;
     }
@@ -66,10 +77,13 @@
          height: 34px;
      }
      #__bgrnd_sub{ //header sans le logo//
-        background-color: $couleur_Tertiaire;
+        background-color: $couleur_tert_light;
         margin-top: -16px;
         padding: 10px;
      }
+     .__ico_map{
+        font-size: 2.5em;
+    }
      h1{ //titre du header//
          color:darken($couleur_primaire ,10) ;
          -webkit-text-stroke: 1px;
@@ -82,7 +96,7 @@
         background:$btn-deb;
         border-radius: 20px;
         cursor: pointer;
-        animation: btn 500ms 1000ms 3; //animation du bouton "Trouvez votre restaurant" au lancement de la page (*3)//
+        animation: btn 500ms 3000ms 3; //animation du bouton "Trouvez votre restaurant" au lancement de la page (*3)//
         transition : transform 300ms, 150ms;
         &:hover { //animation du bouton "Trouvez voter restaurant" au survole//
             transform: scale(1.1);
@@ -109,9 +123,9 @@
          text-align: center;
          display: flex;     
          flex-direction: column;
-         background-color: $couleur_Tertiaire;
+         background: $couleur_tert_light;
          #h1_guide{ //Titre du "guide d'utilisation"//
-             background-color: darken( $couleur_Tertiaire,10);
+             background-color: $couleur_tert_tt_light;
          }
          .btn_guide{ //Conteneur des boutons du "guide d'utilisation"//
              background: $btn-deb;
@@ -164,12 +178,12 @@
 
      #sect_card_acc //Section correspondant aux cards d'acceuil//
      {
-         margin-top:-21px;
-         background-color: $couleur_Tertiaire;
+         margin-top:-24px;
+         background-color: $couleur_tert_light;
          text-align: center;
          padding-bottom: 3px;
          h1{ //Titre de la section correspondant aux cards d'accueil//
-             background-color: darken( $couleur_Tertiaire,10);
+             background-color: $couleur_tert_tt_light;
              padding-bottom: 20px;
              padding-top: 20px;
          }
@@ -178,7 +192,7 @@
              text-align: center;
              width: 340px;
              height: 300px;
-             background-color: $couleur_secondaire;
+             background-color: $couleur_sec_light;
              border-radius: 20px;
              margin-bottom: 20px;
              position: relative;
@@ -262,10 +276,11 @@
      }
 
      #footer{ //pied de page//
-         background-color: darken($couleur_Tertiaire,10);
+         background-color: $couleur_tert_tt_light;
          text-align: center;
          padding-top: 10px;
          padding-bottom:10px;
+         margin: auto;
          #logo_footer img { //logo "ohmyfood" du pied de page//
              width: 196px;
              height: 34px;
@@ -273,6 +288,7 @@
          }
          ul{ //liste de navigation du pied de page//
              list-style-type: none;
+             text-align: center;
          }
          li{ //éléments de la liste du pied de page//
             text-align: left;
