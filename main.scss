@@ -7,7 +7,7 @@
  $couleur_secondaire : #FF79DA;
  $couleur_Tertiaire : #99E2D0;
  $couleur_tert_tt_light : lighten($couleur_Tertiaire,10%); // Couleur Tertiaire lighten background titre//
- $couleur_tert_light :lighten($couleur_Tertiaire,15%); //Couleur tertiaire lighten background sections/articles//
+ $couleur_tert_light :lighten($couleur_Tertiaire,15%); //Couleur tertiaire lighten background _ions/articles//
  $couleur_sec_light: lighten($couleur_primaire,25%); //Couleur primaire lighten card//
  $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire); //Couleur boutons //
  $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);//Couleur bouton modifié//
@@ -17,22 +17,22 @@
  @keyframes load_opac{ //Animation d'opacité pour le load//
      from{
          opacity:1;
-         animation-duration: 5000ms;
      }
      to{
          opacity:0;
      }
  }
 
- .lds-dual-ring{ //loader //
+ .lds-dual-ring{ //Animation d'opacité pour le loader//
      text-align: center;
      margin-top: 300px;
      animation-name:load_opac;
-     animation-duration: 5000ms;
-     opacity: 0;
+     animation-duration: 7000ms;
+     animation-timing-function: cubic-bezier(0,.68,.41,.99);
+     animation-fill-mode: forwards;
  }
 
-  .lds-dual-ring::after { //Dernier enfant loader//
+  .lds-dual-ring::after { //Animation de rotation pour le loader//
     content: " ";
     display: inline-block;
     width: 200px;
@@ -189,6 +189,14 @@
              padding-bottom: 20px;
              padding-top: 20px;
          }
+         a{ //Permet de rendre les cards navigables //
+             display: block;
+             height: 300px;
+             width: 340px;
+             margin:auto;
+             margin-top: 20px;
+             margin-bottom: 20px;    
+         }
          .card_acc{ //Conteneur des cards//
              margin: auto;
              text-align: center;
@@ -196,9 +204,12 @@
              height: 300px;
              background-color: $couleur_sec_light;
              border-radius: 20px;
-             margin-bottom: 20px;
              position: relative;
              overflow: hidden;
+             &:hover > .__img_card_acc{ // Agrandit l'image au survol de la card//
+                 scale: 105%;
+                 transition-duration: 500ms;
+             }
             .__img_card_acc{ //Conteneur des images des cards//
                position: relative;
                 width:340px;
