@@ -228,9 +228,7 @@
   left: 250px;
   cursor: pointer;
 }
-#sect_card_acc .card_acc .__ico_card_acc:hover {
-  animation: ico_card_acc_hov 3000ms infinite;
-}
+
 @keyframes ico_card_acc_hov {
   30% {
     scale: 2;

@@ -241,18 +241,6 @@
                 bottom: 25px;
                 left: 250px;
                 cursor: pointer;
-                &:hover{ //Animation de l'icone au survol//
-                    animation: ico_card_acc_hov 3000ms infinite;
-                }
-                &:active{
-                    @if ($color_ico == $couleur_Tertiaire){
-                    $color_ico: $couleur_primaire;
-                    }
-
-                    @else {
-                    $color_ico: $couleur_Tertiaire;
-                    }
-                }
             }
         }
      }
