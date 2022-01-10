@@ -18,15 +18,27 @@
     
     #hdr_menu{//Section correspondant l'en-tête des menus//
         text-align: center;
+        position: relative;
+        #__ico_menu{
+            position: absolute;
+            color: black;
+            margin-top: 33px;
+            margin-left:35px;
+            font-size: 2em;
+        }
         #__logo_menu{ //Conteneur du logo "ohmyfood"
             background-color:  $couleur_tert_tt_light;
             padding-bottom: 20px;
             padding-top: 20px;
-            text-align: center;
+            margin: auto;
+            margin-top:-18px;
+            img{
+            width:196px;
+            }
         }
         #__img_menu{ //Conteneur de l'image du menu//
         margin: auto;
-        width:400px;
+        margin-top: -27px;
         height:290px;
         overflow: hidden;
         position: relative;
@@ -40,16 +52,44 @@
         }
     }
 
-    .main_menu{ //Section correspondant aux menus //
+    .main_menu{ //Section correspondant à l'ensemble des menus //
         background-color:  $couleur_tert_light;
         text-align: center;
+        margin: auto;
+        border-radius: 20px 20px 0px 0px;
+        margin-top: -60px;
         h1{  //Titre "À la française" //
             background-color: $couleur_tert_tt_light;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-radius: 20px 20px 0px 0px;
+            padding-right:60px;
+            position: relative;
         }
-        h2{ //Titre des cards//
+        #ico_menu{ //Icone coeur du menu //
+            position: absolute;
+            margin-left:30px;
+        }
+        .btn_cmd{ //Bouton commande en fin de section//
+            color:white;
+            background:  $btn-deb;
+            border-radius:30px;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover{ //Survole du bouton commande//
+                background: $btn-fin;
+                font-size:1.1em;
+                filter:opacity(0.9);
+                margin-bottom: 18px;
+            }
+        }
+        .h2_EPD{ //Titre des cards//
             margin-top: 50px;
         }  
-        .card_menu{ //Card des menus //
+        .card_menu_1,.card_menu_2,.card_menu_3{ //Card des menus //
             margin: auto;
             position: relative;
             background-color: $couleur_sec_light;
@@ -58,11 +98,16 @@
             height: 70px;
             box-shadow: 0px 5px 20px #999;
             margin-top: 20px;
-            .__h2_card_menu{ //Titre des cards des menus//
+            .__h2_card_menu { //Titre des cards des menus//
                 color: $couleur_prim_dark;
                 position: absolute;
-                margin-top: -42px;
+                margin-top: -10px;
                 margin-left: 10px;
+                white-space: nowrap; 
+                h2 {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
             }
             .__txt_card_menu{//Texte des cards des menus //
                 color :  $couleur_prim_dark;
@@ -76,21 +121,138 @@
                 margin-top: 10px;
                 margin-left: 300px;
             }
-            .__check_card_menu{//Icone check des cards des menus//
+            .__validation_card_menu //Background de l'icone "check"//
+            {
+                position: absolute;
+                background-color: $couleur_Tertiaire;
+                border-radius: 0px 20px 20px 0px;
+                width:60px;
+                height: 70px;
+                margin-left: 290px;
+                transform-origin: right;
+                transform:scaleX(0);
+                transition: transform 500ms ease-in-out;
+                z-index: 1;
+            }
+            .__validation_card_menu i{//Icone check des cards des menus//
                 color:$couleur_tert_dark;
                 background: $couleur_tert_light;
                 background: 1px solid $couleur_tert_light;
                 padding-left: 5px;
                 padding-right: 5px;
-                padding-top: 3px;
-                padding-bottom: 3px;
+                padding-top: 4px;
+                padding-bottom: 4px;
                 border-radius: 50%;
-                position: absolute;
                 margin-top: 25px;
-                margin-left: 300px;
-            }
+                filter: opacity(0);       
+                }
+            }     
+        }
+
+    @keyframes anim_menu { //Animation des cards des menus au chargement //
+        from{
+            filter:opacity(0);
+            transform: translateY(-5px);
+        }
+        to{
+            filter:opacity(1);
+            transform: translateY(0px);
 
         }
     }
 
+    @keyframes anim_check {
+        from{
+            filter:opacity(0);
+             rotate:(0turn);
+        }
+        to{
+            filter:opacity(1);
+            rotate:(1turn); 
+            
+        }
+    }
 
+    .card_menu_1{ //Card 1er menu//
+        animation: anim_menu 500ms ease-in-out ;
+        &:hover > .__validation_card_menu{ //fait apparaitre le brackground de l'icone "check" au survol"//
+        transform: scale(1);
+        }
+        &:hover > .__validation_card_menu i{
+            animation: anim_check 500ms ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        &:hover >  .__prix_card_menu{ //Décallage du prix vers la gauche lors du survol//
+            translate: -45px;
+            transition-duration: 500ms;
+            transition-timing-function: ease-in-out;
+        }
+        &:hover > .__h2_card_menu {
+            width: 240px;
+            }
+    }
+    .card_menu_2{ //Card 2ème menu//
+        animation:anim_menu 500ms ease-in-out 100ms; 
+        &:hover > .__validation_card_menu{ //fait apparaitre l'icone "check" au survol"//
+            transform: scaleX(1);
+        }
+        &:hover > .__validation_card_menu i{
+            animation: anim_check 500ms ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        &:hover >  .__prix_card_menu{//Décallage du prix vers la gauche lors du survol//
+            translate: -45px;
+            transition-duration: 500ms;
+            transition-timing-function: ease-in-out;
+        }
+    }
+    .card_menu_3{ //Card 3ème menu//
+        animation: anim_menu 500ms ease-in-out 200ms;
+        &:hover > .__validation_card_menu{ //fait apparaitre l'icone "check" au survol"//
+            transform: scaleX(1);
+        }
+        &:hover > .__validation_card_menu i{
+            animation: anim_check 500ms ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        &:hover >  .__prix_card_menu{//Décallage du prix vers la gauche lors du survol//
+            translate: -45px;
+            transition-duration: 500ms;
+            transition-timing-function: ease-in-out;
+        }
+    }
+
+    #footer{ //pied de page//
+        background-color: $couleur_tert_tt_light;
+        text-align: center;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom:10px;
+        a {  //élément de navigation du pied de page//
+            text-decoration: none;
+            color:darken($couleur_Tertiaire,50);
+         }
+        img{ //logo "ohmyfood" du footer//
+            width: 196px;
+            text-align: center;
+        }
+        #nav_ft{ //Ensemble des éléments de navigation du footer//
+            margin-left: -40px;
+        }
+        ul { //Liste des éléments de navigation du pied de page//
+            list-style-type: none;
+            display: inline-block;
+            li{ //Eléments de la liste du pied de page//
+                text-align: left;
+                margin-bottom: 5px;
+                .txt_ft{ //Text de la liste //
+                    padding-left:30px;
+                    margin-top: -18px;
+                }
+                &:hover{ // Survole d'un élément de la liste//
+                    text-decoration: underline;
+                    color:darken($couleur_Tertiaire,50);
+                }
+            }
+        }
+    }
