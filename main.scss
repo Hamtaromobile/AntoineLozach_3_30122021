@@ -13,22 +13,26 @@
  $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);//Couleur bouton modifié//
  $color_ico: $couleur_Tertiaire;
  
- .lds-dual-ring { //loader //
-    animation-name:load_opac;
-    animation-duration: 3000ms;
-    opacity: 0;
- }
 
  @keyframes load_opac{ //Animation d'opacité pour le load//
      from{
          opacity:1;
+         animation-duration: 5000ms;
      }
      to{
          opacity:0;
      }
  }
 
-  .lds-dual-ring:after {
+ .lds-dual-ring{ //loader //
+     text-align: center;
+     margin-top: 300px;
+     animation-name:load_opac;
+     animation-duration: 5000ms;
+     opacity: 0;
+ }
+
+  .lds-dual-ring::after { //Dernier enfant loader//
     content: " ";
     display: inline-block;
     width: 200px;
@@ -36,7 +40,7 @@
     border-radius: 50%;
     border: 10px solid #dfc;
     border-color: $couleur_primaire  transparent  $couleur_secondaire transparent  ;
-    animation: lds-dual-ring 1500ms linear infinite;
+    animation: lds-dual-ring 1500ms linear infinite; //name duration easing-fonction delay//
   }
 
   @keyframes lds-dual-ring { //Keyframes correspondant au loader//
@@ -49,20 +53,18 @@
   }
 
   @keyframes loading { //Keyframes pour afficher le loader au démarrage de la page//
-      0% {
-        filter: opacity(0);
+      from {
+        filter: opacity(0.1);
+        animation-duration: 5000ms;
       }
-      20% {
-        filter: opacity(0);
-      }
-      50% {
+      to {
         filter: opacity(1);
       }
   }
 
   #corp_page{ //Ensemble des sections et articles sans le loader//
-    animation: loading 3000ms;
-    margin-top: -224px;
+    animation: loading 5000ms ;
+    margin-top: -524px;
 }
 
  #srch{ // Header Accueuil //
@@ -235,43 +237,29 @@
                 left:10px
             }
             .__ico_card_acc{ //Icones "coeur" des cards//
-                color:$color_ico;
+                position: absolute;
+                color : $couleur_Tertiaire;
+                font-size: 2.5em;
+                bottom: 25px;
+                left: 250px;
+                z-index: 1;
+                cursor: pointer;
+                &:hover{ // Opacité à 0 au survol de l'icone//
+                    filter:opacity(0);
+                    transition-duration:1000ms;
+                }
+            }
+            .__ico_card_acc_2{ //2ème icone coeur de la card visible au survol du 1er icone//
                 position: absolute;
                 font-size: 2.5em;
                 bottom: 25px;
                 left: 250px;
                 cursor: pointer;
-                &:hover{ //Animation de l'icone au survol//
-                    animation: ico_card_acc_hov 3000ms infinite;
-                }
-                &:active{
-                    @if ($color_ico == $couleur_Tertiaire){
-                    $color_ico: $couleur_primaire;
-                    }
-
-                    @else {
-                    $color_ico: $couleur_Tertiaire;
-                    }
-                }
-            }
-        }
-     }
-     
-     @keyframes ico_card_acc_hov{ //Keyframes pour l'animation au survole de l'icone des cards//
-        30%{
-            scale: (2);
-            animation-timing-function: ease-in-out;
-        }
-        50%{
-            scal:(1);
-        }
-        70%{
-            transform: rotate(1turn);
-            animation-timing-function: ease-in-out;
-        }
-        100%{
-            transform: rotate(-1turn);
-            animation-timing-function: ease-in-out;
+                background: -webkit-linear-gradient(#9c47fc, #356ad2);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                z-index: 0;
+            }  
         }
      }
 
@@ -280,27 +268,29 @@
          text-align: center;
          padding-top: 10px;
          padding-bottom:10px;
-         margin: auto;
          #logo_footer img { //logo "ohmyfood" du pied de page//
-             width: 196px;
              height: 34px;
-             color:darken($couleur_Tertiaire,70);
+             /*color:darken($couleur_Tertiaire,70);*/
          }
-         ul{ //liste de navigation du pied de page//
+         #nav_ft{//Eléments de navigation centré//
+             margin: auto;
+             margin-left: -50px;
+         }
+         ul{ //Liste de navigation du pied de page//
+            display: inline-block;
              list-style-type: none;
-             text-align: center;
-         }
-         li{ //éléments de la liste du pied de page//
-            text-align: left;
-            margin-bottom: 5px;
-            .txt_ft{
-                padding-left:30px;
-                margin-top: -18px;
-            }
-            &:hover{
-                text-decoration: underline;
-                color:darken($couleur_Tertiaire,50);
-            }
+             li{ //Eléments de la liste du pied de page//
+                text-align: left;
+                margin-bottom: 5px;
+                .txt_ft{ //Texte de la liste//
+                    padding-left:30px;
+                    margin-top: -18px;
+                }
+                &:hover{ // Survole d'un élément de la liste//
+                    text-decoration: underline;
+                    color:darken($couleur_Tertiaire,50);
+                }
+             }
          }
          a {  //élément de navigation du pied de page//
             text-decoration: none;
