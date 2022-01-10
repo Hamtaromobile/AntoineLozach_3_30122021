@@ -2,21 +2,24 @@
   box-sizing: border-box;
 }
 
-.lds-dual-ring {
-  animation-name: load_opac;
-  animation-duration: 3000ms;
-  opacity: 0;
-}
-
 @keyframes load_opac {
   from {
     opacity: 1;
+    animation-duration: 5000ms;
   }
   to {
     opacity: 0;
   }
 }
-.lds-dual-ring:after {
+.lds-dual-ring {
+  text-align: center;
+  margin-top: 300px;
+  animation-name: load_opac;
+  animation-duration: 5000ms;
+  opacity: 0;
+}
+
+.lds-dual-ring::after {
   content: " ";
   display: inline-block;
   width: 200px;
@@ -36,19 +39,17 @@
   }
 }
 @keyframes loading {
-  0% {
-    filter: opacity(0);
+  from {
+    filter: opacity(0.1);
+    animation-duration: 5000ms;
   }
-  20% {
-    filter: opacity(0);
-  }
-  50% {
+  to {
     filter: opacity(1);
   }
 }
 #corp_page {
-  animation: loading 3000ms;
-  margin-top: -224px;
+  animation: loading 5000ms;
+  margin-top: -524px;
 }
 
 #srch {
@@ -221,56 +222,57 @@
   left: 10px;
 }
 #sect_card_acc .card_acc .__ico_card_acc {
+  position: absolute;
   color: #99E2D0;
+  font-size: 2.5em;
+  bottom: 25px;
+  left: 250px;
+  z-index: 1;
+  cursor: pointer;
+}
+#sect_card_acc .card_acc .__ico_card_acc:hover {
+  filter: opacity(0);
+  transition-duration: 1000ms;
+}
+#sect_card_acc .card_acc .__ico_card_acc_2 {
   position: absolute;
   font-size: 2.5em;
   bottom: 25px;
   left: 250px;
   cursor: pointer;
+  background: -webkit-linear-gradient(#9c47fc, #356ad2);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 0;
 }
 
-@keyframes ico_card_acc_hov {
-  30% {
-    scale: 2;
-    animation-timing-function: ease-in-out;
-  }
-  50% {
-    scal: 1;
-  }
-  70% {
-    transform: rotate(1turn);
-    animation-timing-function: ease-in-out;
-  }
-  100% {
-    transform: rotate(-1turn);
-    animation-timing-function: ease-in-out;
-  }
-}
 #footer {
   background-color: #c1ede2;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin: auto;
 }
 #footer #logo_footer img {
-  width: 196px;
   height: 34px;
-  color: #05110e;
+  /*color:darken($couleur_Tertiaire,70);*/
+}
+#footer #nav_ft {
+  margin: auto;
+  margin-left: -50px;
 }
 #footer ul {
+  display: inline-block;
   list-style-type: none;
-  text-align: center;
 }
-#footer li {
+#footer ul li {
   text-align: left;
   margin-bottom: 5px;
 }
-#footer li .txt_ft {
+#footer ul li .txt_ft {
   padding-left: 30px;
   margin-top: -18px;
 }
-#footer li:hover {
+#footer ul li:hover {
   text-decoration: underline;
   color: #1b6150;
 }
