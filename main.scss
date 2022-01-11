@@ -91,7 +91,7 @@
          -webkit-text-stroke: 1px;
          -webkit-text-stroke-color: $couleur_primaire;
      }
-     #srch__Explorer{ //input header//
+     #__Explorer{ //input header//
         color:white;
         font-weight: bold;
         padding:10px;
@@ -99,9 +99,9 @@
         border-radius: 20px;
         cursor: pointer;
         animation: btn 500ms 3000ms 3; //animation du bouton "Trouvez votre restaurant" au lancement de la page (*3)//
+        animation-fill-mode:forwards;
         transition : transform 300ms, 150ms;
         &:hover { //animation du bouton "Trouvez voter restaurant" au survole//
-            transform: scale(1.1);
             background: $btn-fin;
             box-shadow: 0px 5px 20px #999;
             filter: opacity(0.9);
@@ -309,3 +309,28 @@
          }
      }
  
+     @media screen and (min-width : 1200px){ //Media queries pour ordinateur //
+            #ensemb_cards{ //Les cards sont affichées avec flex box //
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            #Ensemb_btn{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            #Ensemb_li{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            footer li{
+                margin-left: 50px;
+            }
+        }
