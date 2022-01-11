@@ -53,9 +53,26 @@
   padding-right: 60px;
   position: relative;
 }
-.main_menu #ico_menu {
+.main_menu .ico_menu {
   position: absolute;
-  margin-left: 30px;
+  margin-left: 760px;
+  margin-top: -33px;
+  color: #d5f3eb;
+  z-index: 1;
+}
+.main_menu .ico_menu:hover {
+  filter: opacity(0);
+  transition-duration: 1000ms;
+}
+.main_menu .ico_menu_2 {
+  position: absolute;
+  margin-left: 760px;
+  margin-top: -33px;
+  cursor: pointer;
+  background: -webkit-linear-gradient(#9c47fc, #356ad2);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 0;
 }
 .main_menu .btn_cmd {
   color: white;
@@ -85,6 +102,7 @@
   height: 70px;
   box-shadow: 0px 5px 20px #999;
   margin-top: 20px;
+  cursor: pointer;
 }
 .main_menu .card_menu_1 .__h2_card_menu, .main_menu .card_menu_2 .__h2_card_menu, .main_menu .card_menu_3 .__h2_card_menu {
   color: #460033;

@@ -66,10 +66,27 @@
             padding-right:60px;
             position: relative;
         }
-        #ico_menu{ //Icone coeur du menu //
+        .ico_menu{ //Icone coeur du menu //
             position: absolute;
-            margin-left:30px;
+            margin-left:760px;
+            margin-top: -33px;
+            color:$couleur_tert_light;
+            z-index: 1;
+            &:hover{ // Opacité à 0 au survol de l'icone//
+                filter:opacity(0);
+                transition-duration:1000ms;
+            }
         }
+        .ico_menu_2{ //2ème icone coeur de la card visible au survol du 1er icone//
+            position: absolute;
+            margin-left:760px;
+            margin-top: -33px;
+            cursor: pointer;
+            background: -webkit-linear-gradient(#9c47fc, #356ad2);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 0;
+        } 
         .btn_cmd{ //Bouton commande en fin de section//
             color:white;
             background:  $btn-deb;
@@ -98,6 +115,7 @@
             height: 70px;
             box-shadow: 0px 5px 20px #999;
             margin-top: 20px;
+            cursor: pointer;
             .__h2_card_menu { //Titre des cards des menus//
                 color: $couleur_prim_dark;
                 position: absolute;
