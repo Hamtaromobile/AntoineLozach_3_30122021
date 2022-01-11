@@ -274,3 +274,21 @@
             }
         }
     }
+
+    @media screen and (min-width : 1200px){ //Media queries pour ordinateur //
+        #ensemb_menu{
+            display: flex;
+            justify-content: space-evenly;
+            padding-bottom: 50px;
+            margin: auto;
+        }
+
+        #Ensemb_li{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer li{
+            margin-left: 50px;
+        }
+    }
