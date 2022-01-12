@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+#corp_page {
+  font-family: "Vollkorn", serif;
+}
+
 #hdr_menu {
   text-align: center;
   position: relative;
@@ -50,29 +54,16 @@
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 20px 20px 0px 0px;
-  padding-right: 60px;
+  padding-right: 40px;
   position: relative;
 }
 .main_menu .ico_menu {
-  position: absolute;
-  margin-left: 760px;
+  margin-left: 300px;
   margin-top: -33px;
-  color: #d5f3eb;
-  z-index: 1;
-}
-.main_menu .ico_menu:hover {
-  filter: opacity(0);
-  transition-duration: 1000ms;
-}
-.main_menu .ico_menu_2 {
-  position: absolute;
-  margin-left: 760px;
-  margin-top: -33px;
-  cursor: pointer;
   background: -webkit-linear-gradient(#9c47fc, #356ad2);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  z-index: 0;
+  z-index: 1;
 }
 .main_menu .btn_cmd {
   color: white;
@@ -91,9 +82,22 @@
   margin-bottom: 18px;
 }
 .main_menu .h2_EPD {
+  margin: auto;
   margin-top: 50px;
+  width: 78px;
+  display: inline-block;
 }
-.main_menu .card_menu_1, .main_menu .card_menu_2, .main_menu .card_menu_3 {
+.main_menu .h2_EPD:after {
+  content: "";
+  display: inline-block;
+  background-color: #9356DC;
+  width: 80px;
+  height: 3px;
+  position: relative;
+  left: 5px;
+  bottom: 10px;
+}
+.main_menu .card_menu_1, .main_menu .card_menu_2, .main_menu .card_menu_3, .main_menu .card_menu_4 {
   margin: auto;
   position: relative;
   background-color: #d7c0f2;
@@ -104,30 +108,36 @@
   margin-top: 20px;
   cursor: pointer;
 }
-.main_menu .card_menu_1 .__h2_card_menu, .main_menu .card_menu_2 .__h2_card_menu, .main_menu .card_menu_3 .__h2_card_menu {
+.main_menu .card_menu_1 .__h2_card_menu, .main_menu .card_menu_2 .__h2_card_menu, .main_menu .card_menu_3 .__h2_card_menu, .main_menu .card_menu_4 .__h2_card_menu {
   color: #460033;
   position: absolute;
   margin-top: -10px;
   margin-left: 10px;
   white-space: nowrap;
 }
-.main_menu .card_menu_1 .__h2_card_menu h2, .main_menu .card_menu_2 .__h2_card_menu h2, .main_menu .card_menu_3 .__h2_card_menu h2 {
+.main_menu .card_menu_1 .__h2_card_menu h2, .main_menu .card_menu_2 .__h2_card_menu h2, .main_menu .card_menu_3 .__h2_card_menu h2, .main_menu .card_menu_4 .__h2_card_menu h2 {
   text-overflow: ellipsis;
   overflow: hidden;
+  font-size: 1.3em;
 }
-.main_menu .card_menu_1 .__txt_card_menu, .main_menu .card_menu_2 .__txt_card_menu, .main_menu .card_menu_3 .__txt_card_menu {
-  color: #460033;
+.main_menu .card_menu_1 .__txt_card_menu, .main_menu .card_menu_2 .__txt_card_menu, .main_menu .card_menu_3 .__txt_card_menu, .main_menu .card_menu_4 .__txt_card_menu {
+  color: #790058;
   position: absolute;
   margin-top: 25px;
   margin-left: 10px;
+  white-space: nowrap;
 }
-.main_menu .card_menu_1 .__prix_card_menu, .main_menu .card_menu_2 .__prix_card_menu, .main_menu .card_menu_3 .__prix_card_menu {
+.main_menu .card_menu_1 .__txt_card_menu p, .main_menu .card_menu_2 .__txt_card_menu p, .main_menu .card_menu_3 .__txt_card_menu p, .main_menu .card_menu_4 .__txt_card_menu p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main_menu .card_menu_1 .__prix_card_menu, .main_menu .card_menu_2 .__prix_card_menu, .main_menu .card_menu_3 .__prix_card_menu, .main_menu .card_menu_4 .__prix_card_menu {
   color: #460033;
   position: absolute;
   margin-top: 10px;
   margin-left: 300px;
 }
-.main_menu .card_menu_1 .__validation_card_menu, .main_menu .card_menu_2 .__validation_card_menu, .main_menu .card_menu_3 .__validation_card_menu {
+.main_menu .card_menu_1 .__validation_card_menu, .main_menu .card_menu_2 .__validation_card_menu, .main_menu .card_menu_3 .__validation_card_menu, .main_menu .card_menu_4 .__validation_card_menu {
   position: absolute;
   background-color: #99E2D0;
   border-radius: 0px 20px 20px 0px;
@@ -139,7 +149,7 @@
   transition: transform 500ms ease-in-out;
   z-index: 1;
 }
-.main_menu .card_menu_1 .__validation_card_menu i, .main_menu .card_menu_2 .__validation_card_menu i, .main_menu .card_menu_3 .__validation_card_menu i {
+.main_menu .card_menu_1 .__validation_card_menu i, .main_menu .card_menu_2 .__validation_card_menu i, .main_menu .card_menu_3 .__validation_card_menu i, .main_menu .card_menu_4 .__validation_card_menu i {
   color: #1b6150;
   background: #d5f3eb;
   background: 1px solid #d5f3eb;
@@ -172,6 +182,20 @@
     rotate: 1turn;
   }
 }
+@keyframes anim_txt {
+  0% {
+    width: 270px;
+  }
+  33% {
+    width: 260px;
+  }
+  66% {
+    width: 250px;
+  }
+  100% {
+    width: 240px;
+  }
+}
 .card_menu_1 {
   animation: anim_menu 500ms ease-in-out;
 }
@@ -188,7 +212,14 @@
   transition-timing-function: ease-in-out;
 }
 .card_menu_1:hover > .__h2_card_menu {
-  width: 240px;
+  animation: anim_txt 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  text-align: left;
+}
+.card_menu_1:hover > .__txt_card_menu {
+  animation: anim_txt 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  text-align: left;
 }
 
 .card_menu_2 {
@@ -206,6 +237,16 @@
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
 }
+.card_menu_2:hover > .__h2_card_menu {
+  animation: anim_txt 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  text-align: left;
+}
+.card_menu_2:hover > .__txt_card_menu {
+  animation: anim_txt 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  text-align: left;
+}
 
 .card_menu_3 {
   animation: anim_menu 500ms ease-in-out 200ms;
@@ -221,6 +262,42 @@
   translate: -45px;
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
+}
+.card_menu_3:hover > .__h2_card_menu {
+  animation: anim_txt 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  text-align: left;
+}
+.card_menu_3:hover > .__txt_card_menu {
+  animation: anim_txt 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  text-align: left;
+}
+
+.card_menu_4 {
+  animation: anim_menu 500ms ease-in-out 300ms;
+}
+.card_menu_4:hover > .__validation_card_menu {
+  transform: scaleX(1);
+}
+.card_menu_4:hover > .__validation_card_menu i {
+  animation: anim_check 500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+.card_menu_4:hover > .__prix_card_menu {
+  translate: -45px;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+.card_menu_4:hover > .__h2_card_menu {
+  animation: anim_txt 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  text-align: left;
+}
+.card_menu_4:hover > .__txt_card_menu {
+  animation: anim_txt 500ms ease-in-out;
+  animation-fill-mode: forwards;
+  text-align: left;
 }
 
 #footer {
@@ -259,6 +336,11 @@
 }
 
 @media screen and (min-width: 1200px) {
+  #hdr_menu #__img_menu {
+    height: 400px;
+    background-color: #c1ede2;
+  }
+
   #ensemb_menu {
     display: flex;
     justify-content: space-evenly;
@@ -268,7 +350,6 @@
 
   #Ensemb_li {
     display: flex;
-    justify-content: space-between;
   }
 
   footer li {

@@ -15,6 +15,9 @@
     $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);//Couleur bouton modifié//
 
 
+    #corp_page{
+        font-family: 'Vollkorn', serif;
+    }
     
     #hdr_menu{//Section correspondant l'en-tête des menus//
         text-align: center;
@@ -58,34 +61,22 @@
         margin: auto;
         border-radius: 20px 20px 0px 0px;
         margin-top: -60px;
+
         h1{  //Titre "À la française" //
             background-color: $couleur_tert_tt_light;
             padding-top: 20px;
             padding-bottom: 20px;
             border-radius: 20px 20px 0px 0px;
-            padding-right:60px;
+            padding-right:40px;
             position: relative;
         }
         .ico_menu{ //Icone coeur du menu //
-            position: absolute;
-            margin-left:760px;
+            margin-left:300px;
             margin-top: -33px;
-            color:$couleur_tert_light;
-            z-index: 1;
-            &:hover{ // Opacité à 0 au survol de l'icone//
-                filter:opacity(0);
-                transition-duration:1000ms;
-            }
-        }
-        .ico_menu_2{ //2ème icone coeur de la card visible au survol du 1er icone//
-            position: absolute;
-            margin-left:760px;
-            margin-top: -33px;
-            cursor: pointer;
             background: -webkit-linear-gradient(#9c47fc, #356ad2);
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            z-index: 0;
+            z-index: 1;
         } 
         .btn_cmd{ //Bouton commande en fin de section//
             color:white;
@@ -104,9 +95,22 @@
             }
         }
         .h2_EPD{ //Titre des cards//
+            margin: auto;
             margin-top: 50px;
+            width: 78px;
+            display: inline-block;
         }  
-        .card_menu_1,.card_menu_2,.card_menu_3{ //Card des menus //
+        .h2_EPD:after { //Soulignement du titre //
+            content: "";
+            display: inline-block;
+            background-color: $couleur_primaire;
+            width: 80px;
+            height: 3px;
+            position: relative;
+            left:5px;
+            bottom: 10px;
+        }
+        .card_menu_1,.card_menu_2,.card_menu_3,.card_menu_4{ //Card des menus //
             margin: auto;
             position: relative;
             background-color: $couleur_sec_light;
@@ -125,13 +129,19 @@
                 h2 {
                     text-overflow: ellipsis;
                     overflow: hidden;
+                    font-size: 1.3em;
                 }
             }
             .__txt_card_menu{//Texte des cards des menus //
-                color :  $couleur_prim_dark;
+                color: darken($couleur_secondaire,50);
                 position: absolute;
                 margin-top: 25px;
                 margin-left: 10px;
+                white-space: nowrap;            
+                p {
+                    overflow: hidden;   
+                    text-overflow: ellipsis;
+                }    
             }
             .__prix_card_menu{//Prix des cards des menus//
                 color :  $couleur_prim_dark;
@@ -179,7 +189,7 @@
         }
     }
 
-    @keyframes anim_check {
+    @keyframes anim_check { //Animation du logo check pour le survol//
         from{
             filter:opacity(0);
              rotate:(0turn);
@@ -191,12 +201,27 @@
         }
     }
 
+    @keyframes anim_txt{ //Animation de contraction du titre et du texte des cards pour le survol//
+        0%{
+            width :270px;
+        }
+        33%{
+            width :260px;
+        }
+        66%{
+            width :250px;
+        }
+        100%{
+            width :240px;
+        }
+    }
+
     .card_menu_1{ //Card 1er menu//
         animation: anim_menu 500ms ease-in-out ;
-        &:hover > .__validation_card_menu{ //fait apparaitre le brackground de l'icone "check" au survol"//
+        &:hover > .__validation_card_menu{ //Fait apparaitre le brackground de l'icone "check" au survol"//
         transform: scale(1);
         }
-        &:hover > .__validation_card_menu i{
+        &:hover > .__validation_card_menu i{ //Animation du logo check qui apparait et fait un tour au survol//
             animation: anim_check 500ms ease-in-out;
             animation-fill-mode: forwards;
         }
@@ -205,9 +230,16 @@
             transition-duration: 500ms;
             transition-timing-function: ease-in-out;
         }
-        &:hover > .__h2_card_menu {
-            width: 240px;
+        &:hover > .__h2_card_menu { //Animation du titre de la card retrécissant au survol //
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
             }
+        &:hover > .__txt_card_menu { //Animation du texte de la card retrécissant au survol
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
+        }
     }
     .card_menu_2{ //Card 2ème menu//
         animation:anim_menu 500ms ease-in-out 100ms; 
@@ -223,6 +255,16 @@
             transition-duration: 500ms;
             transition-timing-function: ease-in-out;
         }
+        &:hover > .__h2_card_menu {  //Animation du titre de la card retrécissant au survol //
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
+            }
+        &:hover > .__txt_card_menu { //Animation du texte de la card retrécissant au survol
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
+        }
     }
     .card_menu_3{ //Card 3ème menu//
         animation: anim_menu 500ms ease-in-out 200ms;
@@ -237,6 +279,41 @@
             translate: -45px;
             transition-duration: 500ms;
             transition-timing-function: ease-in-out;
+        }
+        &:hover > .__h2_card_menu {  //Animation du titre de la card retrécissant au survol //
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
+            }
+        &:hover > .__txt_card_menu { //Animation du texte de la card retrécissant au survol
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
+        }
+    }
+    .card_menu_4{ //Card 4ème menu//
+        animation: anim_menu 500ms ease-in-out 300ms;
+        &:hover > .__validation_card_menu{ //fait apparaitre l'icone "check" au survol"//
+            transform: scaleX(1);
+        }
+        &:hover > .__validation_card_menu i{
+            animation: anim_check 500ms ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        &:hover >  .__prix_card_menu{//Décallage du prix vers la gauche lors du survol//
+            translate: -45px;
+            transition-duration: 500ms;
+            transition-timing-function: ease-in-out;
+        }
+        &:hover > .__h2_card_menu {  //Animation du titre de la card retrécissant au survol //
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
+            }
+        &:hover > .__txt_card_menu { //Animation du texte de la card retrécissant au survol
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
         }
     }
 
@@ -276,19 +353,26 @@
     }
 
     @media screen and (min-width : 1200px){ //Media queries pour ordinateur //
-        #ensemb_menu{
+
+        #hdr_menu{ //Section correspondant l'en-tête des menus//
+            #__img_menu{ //Conteneur de l'image du menu//
+                height:400px;
+                background-color: $couleur_tert_tt_light;
+            }
+        }
+            
+        #ensemb_menu{ //Ensemble des menus proposés//
             display: flex;
             justify-content: space-evenly;
             padding-bottom: 50px;
             margin: auto;
         }
-
-        #Ensemb_li{
+        
+        #Ensemb_li{ //Ensemble des lien de navigation du footer//
             display: flex;
-            justify-content: space-between;
         }
 
-        footer li{
+        footer li{ // Lien de navigation du  footer//
             margin-left: 50px;
         }
     }

@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="normalize.css"/> <!--Normalisation de l'apparences des différents éléments html, pour chaques navigateurs-->
         <link href="fontawesome/css/all.css" rel="stylesheet"> <!--lien vers la librarie font Awesome-->
         <link rel="stylesheet" href="style.css"/> <!-- lien vers un style spécifique créé pour le site Ohmyfood-->
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;700&display=swap" rel="stylesheet"> <!--Import police google font Vollkorn-->
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;700&family=Vollkorn:wght@700&display=swap" rel="stylesheet"> <!--Import police google font Vollkorn Bold-->
         <title>Ohmyfood</title>
 	</head>
 
@@ -25,7 +27,7 @@
             <section> <!--Section correspondant au fonctionnement du restaurant-->
                 <div id="guide">
                     <div id="h1_guide"><h1>Guide d'utilisation</h1></div>   
-                    <div id="Ensemb_btn">
+                    <div id="Ensemb_btn"> <!--Ensemble des boutons pour media queries-->
                         <button type="submit" class="btn_guide"> <!--Bouton "Rechercher le restaurant qui vous convient"-->
                             <div class="__nb_btn">
                                 1
@@ -66,8 +68,8 @@
             <section id="sect_card_acc"> <!--Section correspondant aux card des restaurants-->
                 <h1>Restaurants</h1>
 
-                <div id="ensemb_cards">
-                    <a href="#">
+                <div id="ensemb_cards"> <!--Ensemble des cards pour media queries-->
+                    <a href="menu_palette.html">
                         <article class="card_acc"> <!--Card "La palette du goût"-->              
                             <div class="__img_card_acc">
                                 <p><img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût Ménilmontant"/></p>
@@ -88,7 +90,7 @@
                         </article>
                     </a>
 
-                    <a href="#">
+                    <a href="menu_note.html">
                         <article class="card_acc"><!--Card "La note enchantée"-->    
                             <div class="__img_card_acc">
                                 <p><img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée Charonne"/></p>
@@ -131,7 +133,7 @@
                         </article>
                     </a>
 
-                    <a href="#">
+                    <a href="menu_délice.html">
                         <article class="card_acc"><!--Card "Le délice des sens"-->
                             <div class="__img_card_acc">
                                 <p><img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens Folie-Méricourt"/></p>
@@ -157,11 +159,11 @@
                 <div id="logo_footer"><p> <img src="images/logo/ohmyfood.png" tab="ohmyfood"> </p></div>
                 <nav>
                     <ul>
-                        <div id="Ensemb_li">
+                        <div id="Ensemb_li"> <!--Ensemble des lien de navigation du footer pour media queries-->
                             <li><a href="#"><i class="fas fa-coffee"></i><div class="txt_ft">Proposer un restaurant</div></a></li>
                             <li><a href="#"><i class="far fa-smile"></i><div class="txt_ft">Devenir partenaire</div</a></li>
                             <li><a href="#"><i class="fas fa-book-open"></i><div class="txt_ft">Mentions légales</div></a></li>
-                            <li><a href="#"><i class="fas fa-comments"></i><div class="txt_ft">Contact</div></a></li>
+                            <li><a href="mailto:votrenom@bidule.com"><i class="fas fa-comments"></i><div class="txt_ft">Contact</div></a></li>
                         </div>
                     </ul>
                 </nav>

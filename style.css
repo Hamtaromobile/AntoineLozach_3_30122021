@@ -3,18 +3,21 @@
 }
 
 @keyframes load_opac {
-  from {
-    opacity: 1;
+  0% {
+    filter: opacity(1);
   }
-  to {
-    opacity: 0;
+  50% {
+    filter: opacity(1);
+  }
+  100% {
+    filter: opacity(0);
   }
 }
 .lds-dual-ring {
   text-align: center;
   margin-top: 300px;
   animation-name: load_opac;
-  animation-duration: 7000ms;
+  animation-duration: 3000ms;
   animation-timing-function: cubic-bezier(0, 0.68, 0.41, 0.99);
   animation-fill-mode: forwards;
 }
@@ -39,17 +42,20 @@
   }
 }
 @keyframes loading {
-  from {
+  0% {
     filter: opacity(0.1);
-    animation-duration: 5000ms;
   }
-  to {
+  50% {
+    filter: opacity(0.1);
+  }
+  100% {
     filter: opacity(1);
   }
 }
 #corp_page {
-  animation: loading 5000ms;
+  animation: loading 3000ms ease-in-out;
   margin-top: -524px;
+  font-family: "Vollkorn", serif;
 }
 
 #srch {

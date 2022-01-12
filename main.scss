@@ -15,19 +15,22 @@
  
 
  @keyframes load_opac{ //Animation d'opacité pour le load//
-     from{
-         opacity:1;
-     }
-     to{
-         opacity:0;
-     }
+    0% {
+        filter: opacity(1);
+      }
+      50% {
+        filter: opacity(1);
+      }
+      100%{
+          filter: opacity(0);
+      }
  }
 
  .lds-dual-ring{ //Animation d'opacité pour le loader//
      text-align: center;
      margin-top: 300px;
      animation-name:load_opac;
-     animation-duration: 7000ms;
+     animation-duration: 3000ms;
      animation-timing-function: cubic-bezier(0,.68,.41,.99);
      animation-fill-mode: forwards;
  }
@@ -53,18 +56,21 @@
   }
 
   @keyframes loading { //Keyframes pour afficher le loader au démarrage de la page//
-      from {
+      0% {
         filter: opacity(0.1);
-        animation-duration: 5000ms;
       }
-      to {
-        filter: opacity(1);
+      50% {
+        filter: opacity(0.1);
+      }
+      100%{
+          filter: opacity(1);
       }
   }
 
   #corp_page{ //Ensemble des sections et articles sans le loader//
-    animation: loading 5000ms ;
+    animation: loading 3000ms ease-in-out ;
     margin-top: -524px;
+    font-family: 'Vollkorn', serif;
 }
 
  #srch{ // Header Accueuil //
@@ -310,6 +316,7 @@
      }
  
      @media screen and (min-width : 1200px){ //Media queries pour ordinateur //
+
             #ensemb_cards{ //Les cards sont affichées avec flex box //
                 display: flex;
                 justify-content: space-between;
@@ -318,18 +325,18 @@
                 margin-bottom: 50px;
             }
 
-            #Ensemb_btn{
+            #Ensemb_btn{ //Ensemble des imputs du 'guide d'utilisation"//
                 display: flex;
                 justify-content: space-between;
                 margin-top: 50px;
                 margin-bottom: 50px;
             }
 
-            #Ensemb_li{
+            #Ensemb_li{  //Ensemble des lien de navigation du footer//
                 display: flex;
             }
 
-            footer li{
+            footer li{ //Lien de navigation du footer//
                 margin-left: 50px;
             }
         }
