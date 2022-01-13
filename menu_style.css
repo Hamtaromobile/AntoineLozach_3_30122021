@@ -16,13 +16,13 @@
   margin-top: 33px;
   margin-left: 35px;
   font-size: 2em;
+  height: 120px;
 }
 #hdr_menu #__logo_menu {
   background-color: #c1ede2;
   padding-bottom: 20px;
   padding-top: 20px;
   margin: auto;
-  margin-top: -18px;
 }
 #hdr_menu #__logo_menu img {
   width: 196px;
@@ -59,11 +59,12 @@
 }
 .main_menu .ico_menu {
   margin-left: 300px;
-  margin-top: -33px;
+  margin-top: -75px;
+  font-size: 2em;
   background: -webkit-linear-gradient(#9c47fc, #356ad2);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  z-index: 1;
+  position: relative;
 }
 .main_menu .btn_cmd {
   color: white;
@@ -80,6 +81,7 @@
   font-size: 1.1em;
   filter: opacity(0.9);
   margin-bottom: 18px;
+  box-shadow: 0px 5px 20px #999;
 }
 .main_menu .h2_EPD {
   margin: auto;
@@ -151,12 +153,8 @@
 }
 .main_menu .card_menu_1 .__validation_card_menu i, .main_menu .card_menu_2 .__validation_card_menu i, .main_menu .card_menu_3 .__validation_card_menu i, .main_menu .card_menu_4 .__validation_card_menu i {
   color: #1b6150;
-  background: #d5f3eb;
-  background: 1px solid #d5f3eb;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  background-color: #d5f3eb;
+  padding: 5px;
   border-radius: 50%;
   margin-top: 25px;
   filter: opacity(0);
@@ -175,11 +173,11 @@
 @keyframes anim_check {
   from {
     filter: opacity(0);
-    rotate: 0turn;
+    transform: rotate(0deg);
   }
   to {
     filter: opacity(1);
-    rotate: 1turn;
+    transform: rotate(360deg);
   }
 }
 @keyframes anim_txt {
@@ -207,7 +205,7 @@
   animation-fill-mode: forwards;
 }
 .card_menu_1:hover > .__prix_card_menu {
-  translate: -45px;
+  transform: translate(-45px);
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
 }
@@ -233,7 +231,7 @@
   animation-fill-mode: forwards;
 }
 .card_menu_2:hover > .__prix_card_menu {
-  translate: -45px;
+  transform: translate(-45px);
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
 }
@@ -259,7 +257,7 @@
   animation-fill-mode: forwards;
 }
 .card_menu_3:hover > .__prix_card_menu {
-  translate: -45px;
+  transform: translate(-45px);
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
 }
@@ -285,7 +283,7 @@
   animation-fill-mode: forwards;
 }
 .card_menu_4:hover > .__prix_card_menu {
-  translate: -45px;
+  transform: translate(-45px);
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
 }
@@ -336,6 +334,9 @@
 }
 
 @media screen and (min-width: 1200px) {
+  #hdr_menu #__logo_menu {
+    margin-top: -18px;
+  }
   #hdr_menu #__img_menu {
     height: 400px;
     background-color: #c1ede2;
@@ -348,12 +349,14 @@
     margin: auto;
   }
 
-  #Ensemb_li {
+  nav ul {
     display: flex;
+    justify-content: space-between;
   }
 
   footer li {
     margin-left: 50px;
+    display: inline-block;
   }
 }
 

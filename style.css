@@ -64,7 +64,7 @@
 #srch #__logo {
   background-color: #c1ede2;
   padding-bottom: 20px;
-  padding-top: 20px;
+  padding-top: 13px;
 }
 #srch img {
   width: 196px;
@@ -76,7 +76,9 @@
   padding: 10px;
 }
 #srch .__ico_map {
-  font-size: 2.5em;
+  font-size: 2em;
+  margin-top: 10px;
+  margin-bottom: -10px;
 }
 #srch h1 {
   color: #782cd3;
@@ -117,10 +119,13 @@
   flex-direction: column;
   background: #d5f3eb;
 }
-#guide #h1_guide {
+#guide #h2_guide {
   background-color: #c1ede2;
 }
-#guide .btn_guide {
+#guide #h2_guide h2 {
+  font-size: 2em;
+}
+#guide .bouton_guide {
   background: linear-gradient(#9356DC, #FF79DA);
   text-align: center;
   justify-content: space-evenly;
@@ -136,12 +141,12 @@
   transition: transform 300ms, 150ms;
   cursor: pointer;
 }
-#guide .btn_guide:hover {
+#guide .bouton_guide:hover {
   transform: scale(1.1);
   box-shadow: 0px 5px 20px #999;
   filter: opacity(0.9);
 }
-#guide .btn_guide .__nb_btn {
+#guide .bouton_guide .__nb_bouton {
   color: #782cd3;
   border: 1px solid #9356DC;
   background-color: #FF79DA;
@@ -155,12 +160,12 @@
   margin-left: -270px;
   font-weight: bold;
 }
-#guide .btn_guide .__ico_btn {
+#guide .bouton_guide .__ico_bouton {
   position: absolute;
   margin-left: -210px;
   margin-top: 8px;
 }
-#guide .btn_guide .__txt_btn {
+#guide .bouton_guide .__txt_bouton {
   position: absolute;
   margin-left: 20px;
   padding-bottom: 8px;
@@ -169,15 +174,16 @@
 }
 
 #sect_card_acc {
-  margin-top: -24px;
+  margin-top: -27px;
   background-color: #d5f3eb;
   text-align: center;
   padding-bottom: 3px;
 }
-#sect_card_acc h1 {
+#sect_card_acc h2 {
   background-color: #c1ede2;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  font-size: 2em;
 }
 #sect_card_acc a {
   display: block;
@@ -231,6 +237,9 @@
   position: absolute;
   top: 190px;
   left: 10px;
+}
+#sect_card_acc .card_acc .__tt_card_acc h3 {
+  font-size: 1.5em;
 }
 #sect_card_acc .card_acc .__p_card_acc {
   color: #790058;
@@ -314,12 +323,14 @@
     margin-bottom: 50px;
   }
 
-  #Ensemb_li {
+  nav ul {
     display: flex;
+    justify-content: space-between;
   }
 
   footer li {
     margin-left: 50px;
+    display: inline-block;
   }
 }
 
