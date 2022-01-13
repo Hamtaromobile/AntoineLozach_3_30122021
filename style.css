@@ -13,7 +13,7 @@
     filter: opacity(0);
   }
 }
-.lds-dual-ring {
+.Loader {
   text-align: center;
   margin-top: 300px;
   animation-name: load_opac;
@@ -22,7 +22,7 @@
   animation-fill-mode: forwards;
 }
 
-.lds-dual-ring::after {
+.Loader::after {
   content: " ";
   display: inline-block;
   width: 200px;
@@ -30,10 +30,10 @@
   border-radius: 50%;
   border: 10px solid #dfc;
   border-color: #9356DC transparent #FF79DA transparent;
-  animation: lds-dual-ring 1500ms linear infinite;
+  animation: Loader 1500ms linear infinite;
 }
 
-@keyframes lds-dual-ring {
+@keyframes Loader {
   0% {
     transform: rotate(0deg);
   }

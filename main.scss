@@ -25,7 +25,7 @@
       }
  }
 
- .lds-dual-ring{ //Animation d'opacité pour le loader//
+ .Loader{ //Animation d'opacité pour le loader//
      text-align: center;
      margin-top: 300px;
      animation-name:load_opac;
@@ -34,7 +34,7 @@
      animation-fill-mode: forwards;
  }
 
-  .lds-dual-ring::after { //Animation de rotation pour le loader//
+  .Loader::after { //Animation de rotation pour le loader//
     content: " ";
     display: inline-block;
     width: 200px;
@@ -42,10 +42,10 @@
     border-radius: 50%;
     border: 10px solid #dfc;
     border-color: $couleur_primaire  transparent  $couleur_secondaire transparent  ;
-    animation: lds-dual-ring 1500ms linear infinite; //name duration easing-fonction delay//
+    animation: Loader 1500ms linear infinite; //name duration easing-fonction delay//
   }
 
-  @keyframes lds-dual-ring { //Keyframes correspondant au loader//
+  @keyframes Loader { //Keyframes correspondant au loader//
     0% {
       transform: rotate(0deg);
     }
