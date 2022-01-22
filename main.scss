@@ -236,7 +236,7 @@
                 }
             }
             .__new_card_acc{ //Encadré "Nouveau" des cards//
-                color:$couleur_primaire;
+                color:$couleur_secondaire;
                 background-color: darken($couleur_primaire,25);
                 border-radius: 30px;
                 position: absolute;
