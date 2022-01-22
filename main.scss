@@ -5,12 +5,14 @@
  $couleur_primaire :#9356DC;
  $couleur_secondaire : #FF79DA;
  $couleur_Tertiaire : #99E2D0;
- $couleur_tert_tt_light : lighten($couleur_Tertiaire,10%); // Couleur Tertiaire lighten background titre//
+ $couleur_bckgrnd: #DCDCDC;
+ $couleur_bckgrnd_lighter: #EFEFEF;
+ /*$couleur_tert_tt_light : lighten($couleur_Tertiaire,10%); // Couleur Tertiaire lighten background titre//
  $couleur_tert_light :lighten($couleur_Tertiaire,15%); //Couleur tertiaire lighten background _ions/articles//
- $couleur_sec_light: lighten($couleur_primaire,25%); //Couleur primaire lighten card//
- $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire); //Couleur boutons //
- $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);//Couleur bouton modifié//
- $color_ico: $couleur_Tertiaire;
+ $couleur_sec_light: lighten($couleur_primaire,25%); //Couleur primaire lighten card//*/
+ $btn-deb:linear-gradient($couleur_secondaire,$couleur_primaire);  //Couleur boutons //
+ //$btn-fin:linear-gradient($couleur_primaire,$couleur_secondaire); //Couleur bouton modifié//
+ /*$color_ico: $couleur_Tertiaire;*/
  
 
  @keyframes load_opac{ //Animation d'opacité pour le load//
@@ -69,47 +71,55 @@
   #corp_page{ //Ensemble des sections et articles sans le loader//
     animation: loading 3000ms ease-in-out ;
     margin-top: -524px;
-    font-family: 'Vollkorn', serif;
+    font-family: 'Roboto', sans-serif;
 }
 
  #srch{ // Header Accueuil //
      text-align: center;
      #__logo{ //conteneur du logo "ohmyfood"
-        background-color:  $couleur_tert_tt_light;
-        padding-bottom: 20px;
-        padding-top: 13px;
+        background-color:  white;
+        padding-bottom: 8px;
+        padding-top: 8px;
     }
      img{//logo "ohmyfood"
          width: 196px;
          height: 34px;
      }
      #__bgrnd_sub{ //header sans le logo//
-        background-color: $couleur_tert_light;
+        background-color: $couleur_bckgrnd_lighter;
         margin-top: -16px;
-        padding: 10px;
+        padding: 20px;
+        padding-bottom: 40px;
      }
-     .__ico_map{ //Icone panneaux header//
-        font-size: 2em;
-        margin-top:10px;
-        margin-bottom:-10px;
-    }
-     h1{ //titre du header//
-         color:darken($couleur_primaire ,10) ;
-         -webkit-text-stroke: 1px;
-         -webkit-text-stroke-color: $couleur_primaire;
+     .__ico_map{ //Ensemble texte icone "Paris, Belleville"//
+         background-color: $couleur_bckgrnd;
+         padding-top: 5px;
+         padding-bottom: 15px;
+         box-shadow: inset 0px 3px 3px #999;
+         i{ //Icone panneaux header/
+            font-size: 1.5em;
+            position: absolute;
+            margin-left: -120px;
+            margin-top: 22px;
+        }
+        p {
+            font-size: 1.5em;
+        }
      }
+    
      #__Explorer{ //input header//
         color:white;
         font-weight: bold;
         padding:10px;
         background:$btn-deb;
-        border-radius: 20px;
+        border-radius: 30px;
+        border: none;
         cursor: pointer;
         animation: btn 500ms 3000ms 3; //animation du bouton "Trouvez votre restaurant" au lancement de la page (*3)//
         animation-fill-mode:forwards;
         transition : transform 300ms, 150ms;
-        &:hover { //animation du bouton "Trouvez voter restaurant" au survole//
-            background: $btn-fin;
+        padding: 20px;
+        &:hover { //animation du bouton "Trouvez voter restaurant" au survole/
             box-shadow: 0px 5px 20px #999;
             filter: opacity(0.9);
         }
@@ -128,19 +138,22 @@
         }
     }  
 
-     #guide{ //Section correspondant au "guide d'utilisation"//
+     #guide{ //Section correspondant au "Fonctionnement"//
          text-align: center;
          display: flex;     
          flex-direction: column;
-         background: $couleur_tert_light;
-         #h2_guide{ //Titre du "guide d'utilisation"//
-             background-color: $couleur_tert_tt_light;
+         padding-top:20px;
+         padding-bottom: 35px;
+         #h2_guide{ //Titre du "Fonctionnement"//
              h2{
                  font-size: 2em;
+                 margin-left: -30px;
+                 margin-bottom: 5px;
              }
          }
-         .bouton_guide{ //Conteneur des boutons du "guide d'utilisation"//
-             background: $btn-deb;
+         .bouton_guide{ //Conteneur des boutons du "Fonctionnement"//
+             background-color: $couleur_bckgrnd_lighter;
+             border : none;
              text-align: center;
              justify-content: space-evenly;
              display: flex;
@@ -150,38 +163,41 @@
              margin:auto;
              margin-bottom: 15px;
              margin-top: 15px;
-             border-radius: 30px;
+             border-radius: 20px;
              position: relative;
              transition : transform 300ms, 150ms;
+             box-shadow: 0px 5px 5px #999;
              cursor: pointer;
-             &:hover{ //Survol des boutons du "guide d'utilisation"//
-                transform: scale(1.1);
-                box-shadow: 0px 5px 20px #999;
+             &:hover{ //Survol des boutons du "Fonctionnement"//
+                background : lighten($couleur_primaire,30%);
                 filter: opacity(0.9);
              }
-             .__nb_bouton{ //Nombre des boutons du "guide d'utilisation"//     
-                color: darken($couleur_primaire,10);  
-                border:1px solid $couleur_primaire;
-                background-color: $couleur_secondaire;
+             &:hover > .__ico_bouton{ // Change la couleur de l'icone au survol des boutons du "Fonctionnement"//
+                color : $couleur_primaire;
+             }
+             .__nb_bouton{ //Nombre des boutons du "Fonctionnement"//     
+                color: white;  
+                background-color: $couleur_primaire;
                 border-radius: 30px;
                 padding-left : 8px;
                 padding-right: 8px;
                 padding-top: 3px;
                 padding-bottom: 3px;
                 position: absolute;
-                margin-top: 2px;
+                margin-top: 7px;
                 margin-left:-270px;
                 font-weight: bold;
             }
-            .__ico_bouton{ //icone des boutons du "guide d'utilisation"//
+            .__ico_bouton{ //icone des boutons du "Fonctionnement"//
+                color: #5A5E6B;
                 position: absolute;
-                margin-left: -210px;
-                margin-top:8px;
+                margin-left: -203px;
+                margin-top:12px;
             }
-            .__txt_bouton{ //texte des boutons du "guide d'utilisation"//
+            .__txt_bouton{ //texte des boutons du "Fonctionnement"//
                 position:absolute;
                 margin-left: 20px;
-                padding-bottom: 8px;
+                margin-top: 12px;
                 width: 200px;
                 font-weight: bold;
             }
@@ -191,13 +207,12 @@
      #sect_card_acc //Section correspondant aux cards d'acceuil//
      {
          margin-top:-27px;
-         background-color: $couleur_tert_light;
+         background-color: $couleur_bckgrnd_lighter;
          text-align: center;
          padding-bottom: 3px;
          h2{ //Titre de la section correspondant aux cards d'accueil//
-             background-color: $couleur_tert_tt_light;
-             padding-bottom: 24px;
-             padding-top: 24px;
+             padding-top: 60px;
+             margin-left: -150px;
              font-size: 2em;
          }
          a{ //Permet de rendre les cards navigables //
@@ -212,11 +227,14 @@
              margin: auto;
              text-align: center;
              width: 340px;
-             height: 300px;
-             background-color: $couleur_sec_light;
+             height: 280px;
+             background-color: white;
              border-radius: 20px;
              position: relative;
              overflow: hidden;
+             &:hover{
+                box-shadow: 0px 5px 20px #999;
+             }
              &:hover > .__img_card_acc{ // Agrandit l'image au survol de la card//
                  scale: 105%;
                  transition-duration: 500ms;
@@ -236,106 +254,113 @@
                 }
             }
             .__new_card_acc{ //Encadré "Nouveau" des cards//
-                color:$couleur_secondaire;
-                background-color: darken($couleur_primaire,25);
-                border-radius: 30px;
+                color:darken($couleur_Tertiaire,40%);
+                background-color: lighten($couleur_Tertiaire,5%);
                 position: absolute;
                 top : 20px;
                 left : 220px;
                 width: 90px;
-                height: 40px;
-                padding-bottom: 50px;
+                height: 30px;
+                p{
+                    margin-top: 6px;
+                }
             }
             .__tt_card_acc{ //Titre des cards//
-                color: darken($couleur_secondaire,60);
                 position: absolute;
                 top:190px;
                 left : 10px;
                 h3{
                     font-size: 1.5em;
+                    color: black;
                 }
             }
             .__p_card_acc{ //Texte des cards//
-                color: darken($couleur_secondaire,50);
                 position: absolute;
                 top:230px;
-                left:10px
+                left:10px;
+                color: black;
             }
             .__ico_card_acc{ //Icones "coeur" des cards//
+                color: black;
                 position: absolute;
-                color : $couleur_tert_light;
-                font-size: 2.5em;
-                bottom: 25px;
+                font-size: 30px;
+                bottom: 26px;
                 left: 250px;
                 z-index: 1;
                 cursor: pointer;
-                &:hover{ // Opacité à 0 au survol de l'icone//
-                    filter:opacity(0);
-                    transition-duration:1000ms;
-                }
             }
             .__ico_card_acc_2{ //2ème icone coeur de la card visible au survol du 1er icone//
                 position: absolute;
-                font-size: 2.5em;
-                bottom: 25px;
-                left: 250px;
+                font-size: 33px;
+                bottom: 24px;
+                left: 248px;
                 cursor: pointer;
-                background: -webkit-linear-gradient(#9c47fc, #356ad2);
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                z-index: 0;
+                color :transparent;
+                background-clip:text ;
+                background-image: $btn-deb;
+                z-index: 1;
+                filter:opacity(0);
+                &:hover { // Rend visible le deuxième icone du coeur au surovl//
+                    z-index: 2;
+                    filter:opacity(1);
+                    transition-duration:1000ms;
+                }
             } 
         }
      }
 
      #footer{ //pied de page//
-         background-color: $couleur_tert_tt_light;
+         color: white;
+         background-color: darken($couleur_bckgrnd,70);
          text-align: center;
          padding-top: 10px;
          padding-bottom:10px;
+         #ensemble_logo_nav{
+             margin-left: -145px;
+         }
          #logo_footer img { //logo "ohmyfood" du pied de page//
              height: 34px;
-             /*color:darken($couleur_Tertiaire,70);*/
+             color:white;
+             margin-left:20px;
          }
-         #nav_ft{//Eléments de navigation centré//
-             margin: auto;
-             margin-left: -50px;
-         }
-         ul{ //Liste de navigation du pied de page//
-            display: inline-block;
-             list-style-type: none;
-             li{ //Eléments de la liste du pied de page//
-                text-align: left;
-                margin-bottom: 5px;
-                .txt_ft{ //Texte de la liste//
-                    padding-left:30px;
-                    margin-top: -18px;
+            ul{ //Liste de navigation du pied de page//
+                display: inline-block;
+                list-style-type: none;
+                margin-left: -55px;
+                li{ //Eléments de la liste du pied de page//
+                    text-align: left;
+                    .txt_ft{ //Texte de la liste//
+                        padding-left:30px;
+                        margin-bottom: 10px;
+                        i{
+                            padding-right: 10px;
+                        }
+                    }
+                    &:hover{ // Survole d'un élément de la liste//
+                        text-decoration: underline;
+                        color: white;
+                    }
                 }
-                &:hover{ // Survole d'un élément de la liste//
-                    text-decoration: underline;
-                    color:darken($couleur_Tertiaire,50);
-                }
-             }
-         }
+            }
          a {  //élément de navigation du pied de page//
             text-decoration: none;
-            color:darken($couleur_Tertiaire,50);
+            color: white;
          }
      }
  
      @media screen and (min-width : 1200px){ //Media queries pour ordinateur //
 
-            #ensemb_cards{ //Les cards sont affichées avec flex box //
+            #Ensemb_btn{ //Ensemble des imputs du 'guide d'utilisation"//
                 display: flex;
                 justify-content: space-between;
-                flex-wrap: wrap;
                 margin-top: 50px;
                 margin-bottom: 50px;
             }
 
-            #Ensemb_btn{ //Ensemble des imputs du 'guide d'utilisation"//
+            #ensemb_cards{ //Les cards sont affichées avec flex box //
                 display: flex;
                 justify-content: space-between;
+                flex-wrap: wrap;
                 margin-top: 50px;
                 margin-bottom: 50px;
             }

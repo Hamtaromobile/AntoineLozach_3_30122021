@@ -6,8 +6,9 @@
 		<link rel="stylesheet" href="normalize.css"/> <!--Normalisation de l'apparences des différents éléments html, pour chaques navigateurs-->
         <link href="fontawesome/css/all.css" rel="stylesheet"> <!--lien vers la librarie font Awesome-->
         <link rel="stylesheet" href="style.css"/> <!-- lien vers un style spécifique créé pour le site Ohmyfood-->
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;700&display=swap" rel="stylesheet"> <!--Import police google font Vollkorn-->
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;700&family=Vollkorn:wght@700&display=swap" rel="stylesheet"> <!--Import police google font Vollkorn Bold-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">  
         <title>Ohmyfood</title>
 	</head>
 
@@ -15,9 +16,9 @@
         <div class="Loader"></div> <!--Loader-->
         <div id="corp_page">
             <header id="srch"><!--En-tête correspondant à la recherche des restaurants-->
-                <div id="__logo"><p> <img src="images/logo/ohmyfood.png" alt="ohmyfood"> </p></div>
+                <div id="__logo"><p> <img src="images/logo/ohmyfood.png" alt="ohmyfood"> </p></div>   
+                     <div class="__ico_map"><i class="fas fa-map-marker-alt"></i><p>Paris, Belleville</p></div>
                 <div id="__bgrnd_sub"> 
-                     <div class="__ico_map"><i class="fas fa-map-marker-alt"></i></div><p>Paris, Belleville</p>
                     <h1>Réservez le menu qui vous convient</h1>
                     <p>Découvrez des restaurants d'exception séléctionnés par nos soins</p>
                     <p> <input type="submit" value="Explorer nos restaurants" id="__Explorer" /> </p>
@@ -82,9 +83,10 @@
                                 <p>Ménilmontant</p>
                             </div>
                             <div class="__ico_card_acc">
-                                <i class="fal fa-heart"></i>
-                            </div>                        <div class="__ico_card_acc_2">
-                                <i class="fal fa-heart"></i>
+                                <i class="far fa-heart"></i>
+                            </div>                        
+                            <div class="__ico_card_acc_2">
+                                <i class="fas fa-heart"></i>
                             </div>
                         </article>
                     </a>
@@ -104,10 +106,10 @@
                                 <p>Charonne</p>
                             </div>
                             <div class="__ico_card_acc">
-                                <i class="fal fa-heart"></i>
+                                <i class="far fa-heart"></i>
                             </div>
                             <div class="__ico_card_acc_2">
-                                <i class="fal fa-heart"></i>
+                                <i class="fas fa-heart"></i>
                             </div>               
                         </article>
                     </a>
@@ -124,10 +126,10 @@
                                 <p>Cité rouge</p>
                             </div>
                             <div class="__ico_card_acc">
-                                <i class="fal fa-heart"></i>
+                                <i class="far fa-heart"></i>
                             </div>
                             <div class="__ico_card_acc_2">
-                                <i class="fal fa-heart"></i>
+                                <i class="fas fa-heart"></i>
                             </div>               
                         </article>
                     </a>
@@ -144,10 +146,10 @@
                                 <p>Folie-Méricourt</p>
                             </div>
                             <div class="__ico_card_acc">
-                                <i class="fal fa-heart"></i>
+                                <i class="far fa-heart"></i>
                             </div>
                             <div class="__ico_card_acc_2">
-                                <i class="fal fa-heart"></i>
+                                <i class="fas fa-heart"></i>
                             </div>         
                         </article>
                     </a>
@@ -155,15 +157,17 @@
             </section>
 
             <footer id="footer"> <!--Pied de page-->
-                <div id="logo_footer"><p> <img src="images/logo/ohmyfood.png" alt="ohmyfood"> </p></div>
-                <nav>
-                    <ul id="Ensemb_li">
-                        <li><a href="#"><i class="fas fa-utensils"></i><div class="txt_ft">Proposer un restaurant</div></a></li>
-                        <li><a href="#"><i class="fas fa-hands-helping"></i><div class="txt_ft">Devenir partenaire</div></a></li>
-                        <li><a href="#"><div class="txt_ft">Mentions légales</div></a></li>
-                        <li><a href="mailto:votrenom@bidule.com"><div class="txt_ft">Contact</div></a></li>
-                    </ul>
-                </nav>
+                <div id="ensemble_logo_nav">
+                    <div id="logo_footer"><p> <img src="images/logo/ohmyfood-modified.png" alt="ohmyfood"> </p></div>
+                    <nav>
+                        <ul id="Ensemb_li">
+                            <li><a href="#"><div class="txt_ft"> <i class="fas fa-utensils"></i>Proposer un restaurant</div></a></li>
+                            <li><a href="#"><div class="txt_ft"> <i class="fas fa-hands-helping"></i>Devenir partenaire</div></a></li>
+                            <li><a href="#"><div class="txt_ft">Mentions légales</div></a></li>
+                            <li><a href="mailto:votrenom@bidule.com"><div class="txt_ft">Contact</div></a></li>
+                        </ul>
+                    </nav>
+                </div>
             </footer>
         </div>
     </body>
