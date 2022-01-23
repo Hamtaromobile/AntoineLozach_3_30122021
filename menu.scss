@@ -87,9 +87,7 @@
         .__ico_menu_2 i{
             font-size: 33px;
             position: relative;
-            color :transparent;
-            background-clip:text ;
-            background-image: $btn;
+            color :$couleur_primaire;
             cursor: pointer;
             z-index: 1;
             filter:opacity(0);
@@ -147,20 +145,21 @@
             cursor: pointer;
             .__h2_card_menu { //Titre des cards des menus//
                 position: absolute;
-                margin-top: -10px;
+                margin-top: -5px;
                 margin-left: 10px;
                 white-space: nowrap; 
                 h2 {
                     text-overflow: ellipsis;
                     overflow: hidden;
-                    font-size: 1.3em;
+                    font-size: 1.2em;
                 }
             }
             .__txt_card_menu{//Texte des cards des menus //
                 position: absolute;
                 margin-top: 25px;
                 margin-left: 10px;
-                white-space: nowrap;            
+                white-space: nowrap;    
+                font-size: 0.9em;        
                 p {
                     overflow: hidden;   
                     text-overflow: ellipsis;

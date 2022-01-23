@@ -77,9 +77,7 @@ $couleur_tert_dark:darken($couleur_Tertiaire,50);//Couleur tertiaire darken du l
 .main_menu .__ico_menu_2 i {
   font-size: 33px;
   position: relative;
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(#FF79DA, #9356DC);
+  color: #9356DC;
   cursor: pointer;
   z-index: 1;
   filter: opacity(0);
@@ -136,20 +134,21 @@ $couleur_tert_dark:darken($couleur_Tertiaire,50);//Couleur tertiaire darken du l
 }
 .main_menu .card_menu_1 .__h2_card_menu, .main_menu .card_menu_1_hte .__h2_card_menu, .main_menu .card_menu_2 .__h2_card_menu, .main_menu .card_menu_3 .__h2_card_menu, .main_menu .card_menu_4 .__h2_card_menu {
   position: absolute;
-  margin-top: -10px;
+  margin-top: -5px;
   margin-left: 10px;
   white-space: nowrap;
 }
 .main_menu .card_menu_1 .__h2_card_menu h2, .main_menu .card_menu_1_hte .__h2_card_menu h2, .main_menu .card_menu_2 .__h2_card_menu h2, .main_menu .card_menu_3 .__h2_card_menu h2, .main_menu .card_menu_4 .__h2_card_menu h2 {
   text-overflow: ellipsis;
   overflow: hidden;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 .main_menu .card_menu_1 .__txt_card_menu, .main_menu .card_menu_1_hte .__txt_card_menu, .main_menu .card_menu_2 .__txt_card_menu, .main_menu .card_menu_3 .__txt_card_menu, .main_menu .card_menu_4 .__txt_card_menu {
   position: absolute;
   margin-top: 25px;
   margin-left: 10px;
   white-space: nowrap;
+  font-size: 0.9em;
 }
 .main_menu .card_menu_1 .__txt_card_menu p, .main_menu .card_menu_1_hte .__txt_card_menu p, .main_menu .card_menu_2 .__txt_card_menu p, .main_menu .card_menu_3 .__txt_card_menu p, .main_menu .card_menu_4 .__txt_card_menu p {
   overflow: hidden;

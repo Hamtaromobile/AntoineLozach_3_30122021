@@ -286,12 +286,10 @@
             .__ico_card_acc_2{ //2ème icone coeur de la card visible au survol du 1er icone//
                 position: absolute;
                 font-size: 33px;
-                bottom: 24px;
-                left: 248px;
+                bottom: 25px;
+                left: 249px;
                 cursor: pointer;
-                color :transparent;
-                background-clip:text ;
-                background-image: $btn-deb;
+                color :$couleur_primaire;
                 z-index: 1;
                 filter:opacity(0);
                 &:hover { // Rend visible le deuxième icone du coeur au surovl//

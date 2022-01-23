@@ -273,12 +273,10 @@
 #sect_card_acc .card_acc .__ico_card_acc_2 {
   position: absolute;
   font-size: 33px;
-  bottom: 24px;
-  left: 248px;
+  bottom: 25px;
+  left: 249px;
   cursor: pointer;
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(#FF79DA, #9356DC);
+  color: #9356DC;
   z-index: 1;
   filter: opacity(0);
 }
