@@ -6,8 +6,9 @@
 		<link rel="stylesheet" href="normalize.css"/> <!--Normalisation de l'apparences des différents éléments html, pour chaques navigateurs-->
         <link href="fontawesome/css/all.css" rel="stylesheet"> <!--lien vers la librarie font Awesome-->
         <link rel="stylesheet" href="menu_style.css"/> <!-- lien vers un style spécifique créé pour le menu "à la Française"-->
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;700&display=swap" rel="stylesheet"> <!--Import police google font Vollkorn-->
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;700&family=Vollkorn:wght@700&display=swap" rel="stylesheet"> <!--Import police google font Vollkorn Bold-->
+        <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Google font Robot et Shrikhand-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet"> 
         <title>Menu la note enchantée</title>
 	</head>
 
@@ -23,9 +24,12 @@
 
             <main class="main_menu"><!--Section correspondant aux menus "À la française"-->
                     <h1>La note enchantée</h1>
-                        <div class="ico_menu">
+                        <div class="__ico_menu">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="__ico_menu_2">
                             <i class="fas fa-heart"></i>
-                        </div>       
+                        </div>    
                 <div id="ensemb_menu">
                     <section><!--Section correspondant au menu des entrées-->
                         <h2 class="h2_EPD">ENTRÉES </h2>        
@@ -76,7 +80,7 @@
 
                         <article class="card_menu_4"><!--Article correspondant au "Foie gras"-->
                             <div class="__h2_card_menu">
-                                <h2>Foie gras de canard cuit</h2>
+                                <h2>Foie gras de canard cuit entier</h2>
                             </div>
                             <div class="__txt_card_menu">
                                 <p>Confiture de figue de pain toasté</p>
@@ -94,10 +98,10 @@
                         <h2 class="h2_EPD">PLATS</h2>
                         <article class="card_menu_1"><!--Article correspondant aux "Coquilles"-->
                             <div class="__h2_card_menu">
-                                <h2>Coquilles Saint-Jacques</h2>
+                                <h2>Noix de coquilles Saint-Jacques</h2>
                             </div>
                             <div class="__txt_card_menu">
-                                <p>Sur un lit de purée de céleri-rave</p>
+                                <p>Sur lit de purée de céleri-rave</p>
                             </div>
                             <div class="__prix_card_menu">
                                 <p>40<i class="fas fa-euro-sign"></i></p>
@@ -142,10 +146,10 @@
                         <h2 class="h2_EPD">DESSERTS</h2>
                         <article class="card_menu_1"><!--Article correspondant au "Macaron"-->
                             <div class="__h2_card_menu">
-                                <h2>Macaron noisette</h2>
+                                <h2>Macaron noisette et chocolat</h2>
                             </div>
                             <div class="__txt_card_menu">
-                                <p>Glace au caramel brun </p>
+                                <p>Glace au caramel brun et sel de Guérande</p>
                             </div>
                             <div class="__prix_card_menu">
                                 <p>18<i class="fas fa-euro-sign"></i></p>
@@ -191,15 +195,15 @@
                 </button>
             </main>
 
-            <footer id="footer">
-                <div id="__logo_menu_ft"><p> <img src="images/logo/ohmyfood.png" alt="ohmyfood"/> </p></div>
-                <div id="nav_ft">
+            <footer id="footer"> <!--Pied de page-->
+                <div id="ensemble_logo_nav">
+                    <div id="logo_footer"><p> <img src="images/logo/ohmyfood-modified.png" alt="ohmyfood"> </p></div>
                     <nav>
-                        <ul>
-                            <li><a href="#"><i class="fas fa-coffee"></i><div class="txt_ft">Proposer un restaurant</div></a></li>
-                            <li><a href="#"><i class="far fa-smile"></i><div class="txt_ft">Devenir partenaire</div></a></li>
-                            <li><a href="#"><i class="fas fa-book-open"></i><div class="txt_ft">Mentions légales</div></a></li>
-                            <li><a href="mailto:votrenom@bidule.com"><i class="fas fa-comments"></i><div class="txt_ft">Contact</div></a></li>
+                        <ul id="Ensemb_li">
+                            <li><a href="#"><div class="txt_ft"> <i class="fas fa-utensils"></i>Proposer un restaurant</div></a></li>
+                            <li><a href="#"><div class="txt_ft"> <i class="fas fa-hands-helping"></i>Devenir partenaire</div></a></li>
+                            <li><a href="#"><div class="txt_ft">Mentions légales</div></a></li>
+                            <li><a href="mailto:votrenom@bidule.com"><div class="txt_ft">Contact</div></a></li>
                         </ul>
                     </nav>
                 </div>

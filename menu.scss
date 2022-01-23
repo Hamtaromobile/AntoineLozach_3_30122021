@@ -6,35 +6,35 @@
     $couleur_primaire :#9356DC;
     $couleur_secondaire : #FF79DA;
     $couleur_Tertiaire : #99E2D0;
-    $couleur_tert_tt_light : lighten($couleur_Tertiaire,10%); // Couleur Tertiaire lighten background titre//
+    $couleur_bckgrnd: #DCDCDC;
+    $couleur_bckgrnd_lighter: #EFEFEF;
+    /*$couleur_tert_tt_light : lighten($couleur_Tertiaire,10%); // Couleur Tertiaire lighten background titre//
     $couleur_tert_light :lighten($couleur_Tertiaire,15%); //Couleur tertiaire lighten background sections/articles//
     $couleur_sec_light: lighten($couleur_primaire,25%); //Couleur primaire lighten card//
     $couleur_prim_dark: darken($couleur_secondaire,60); //Couleur primaire darken du texte pour les cards//
-    $couleur_tert_dark:darken($couleur_Tertiaire,50);//Couleur tertiaire darken du logo check des cards//
-    $btn-deb: linear-gradient($couleur_primaire,$couleur_secondaire); //Couleur boutons //
-    $btn-fin: linear-gradient($couleur_secondaire,$couleur_primaire);//Couleur bouton modifié//
+    $couleur_tert_dark:darken($couleur_Tertiaire,50);//Couleur tertiaire darken du logo check des cards//*/
+    
+    $btn: linear-gradient($couleur_secondaire,$couleur_primaire);//Couleur bouton modifié//
 
 
     #corp_page{
-        font-family: 'Vollkorn', serif;
+        font-family: 'Roboto', sans-serif;
     }
     
     #hdr_menu{//Section correspondant l'en-tête des menus//
         text-align: center;
         position: relative;
-        #__ico_menu{ //Conteneur de l'icone du menu//
+        #__ico_menu{ //Conteneur de l'icone flêche du menu//
             position: absolute;
             color: black;
-            margin-top: 33px;
-            margin-left:35px;
             font-size: 2em;
             height: 120px;
+            margin-left: 50px;
+            padding-bottom: 20px;
         }
         #__logo_menu{ //Conteneur du logo "ohmyfood"
-            background-color:  $couleur_tert_tt_light;
-            padding-bottom: 20px;
-            padding-top: 20px;
             margin: auto;
+            padding-bottom: 20px;
             img{
             width:196px;
             }
@@ -56,40 +56,61 @@
     }
 
     .main_menu{ //Section correspondant à l'ensemble des menus //
-        background-color:  $couleur_tert_light;
+        background-color:  $couleur_bckgrnd_lighter;
         text-align: center;
         margin: auto;
         border-radius: 20px 20px 0px 0px;
         margin-top: -60px;
+        position: relative;
 
-        h1{  //Titre "À la française" //
-            background-color: $couleur_tert_tt_light;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            border-radius: 20px 20px 0px 0px;
-            padding-right:40px;
+        h1{  //Titre "À la française", etc... //
+            font-family: 'Shrikhand', cursive;;
+            padding-top: 30px;
+            margin:auto;
+            margin-left:-50px;
             position: relative;
         }
-        .ico_menu{ //Icone coeur du menu //
-            margin-left:300px;
-            margin-top: -75px;
-            font-size: 2em;
-            background: -webkit-linear-gradient(#9c47fc, #356ad2);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .__ico_menu{
+            margin-top: -35px;
+            margin-left:320px;
+        }
+        .__ico_menu i { //Icone coeur du menu //
+            font-size: 30px;
             position: relative;
+            z-index: 1;
+            cursor: pointer;
         } 
+        .__ico_menu_2{
+            margin-top: -31px;
+            margin-left:320px;
+        }
+        .__ico_menu_2 i{
+            font-size: 33px;
+            position: relative;
+            color :transparent;
+            background-clip:text ;
+            background-image: $btn;
+            cursor: pointer;
+            z-index: 1;
+            filter:opacity(0);
+                &:hover { // Rend visible le deuxième icone du coeur au surovl//
+                    z-index: 2;
+                    filter:opacity(1);
+                    transition-duration:1000ms;
+                }
+        }
         .btn_cmd{ //Bouton commande en fin de section//
             color:white;
-            background:  $btn-deb;
+            background:  $btn;
+            border:none;
             border-radius:30px;
             padding: 15px;
             margin-top: 20px;
             margin-bottom: 20px;
             font-weight: bold;
+            width: 200px;
             cursor: pointer;
             &:hover{ //Survole du bouton commande//
-                background: $btn-fin;
                 font-size:1.1em;
                 filter:opacity(0.9);
                 margin-bottom: 18px;
@@ -99,23 +120,25 @@
         .h2_EPD{ //Titre des cards//
             margin: auto;
             margin-top: 50px;
+            margin-left: -260px;
             width: 78px;
             display: inline-block;
         }  
         .h2_EPD:after { //Soulignement du titre //
             content: "";
             display: inline-block;
-            background-color: $couleur_primaire;
+            background-color: $couleur_Tertiaire;
             width: 80px;
             height: 3px;
             position: relative;
             left:5px;
             bottom: 10px;
         }
-        .card_menu_1,.card_menu_2,.card_menu_3,.card_menu_4{ //Card des menus //
+
+
+        .card_menu_1,.card_menu_1_hte,.card_menu_2,.card_menu_3,.card_menu_4{ //Card des menus //
             margin: auto;
             position: relative;
-            background-color: $couleur_sec_light;
             border-radius: 20px;
             width: 350px;
             height: 70px;
@@ -123,7 +146,6 @@
             margin-top: 20px;
             cursor: pointer;
             .__h2_card_menu { //Titre des cards des menus//
-                color: $couleur_prim_dark;
                 position: absolute;
                 margin-top: -10px;
                 margin-left: 10px;
@@ -135,7 +157,6 @@
                 }
             }
             .__txt_card_menu{//Texte des cards des menus //
-                color: darken($couleur_secondaire,50);
                 position: absolute;
                 margin-top: 25px;
                 margin-left: 10px;
@@ -146,10 +167,9 @@
                 }    
             }
             .__prix_card_menu{//Prix des cards des menus//
-                color :  $couleur_prim_dark;
                 position: absolute;
-                margin-top: 10px;
-                margin-left: 300px;
+                margin-top: 15px;
+                margin-left: 305px;
             }
             .__validation_card_menu //Background de l'icone "check"//
             {
@@ -165,14 +185,73 @@
                 z-index: 1;
             }
             .__validation_card_menu i{//Icone check des cards des menus//
-                color:$couleur_tert_dark;
-                background-color: $couleur_tert_light;
+                color:darken($couleur_Tertiaire,50);
+                background-color: lighten($couleur_Tertiaire,50);
                 padding: 5px;
                 border-radius: 50%;
                 margin-top: 25px;
                 filter: opacity(0);       
                 }
-            }     
+            }
+            .card_menu_1_hte{ //Card 1 du plats du délice des sens plus haute //
+                margin: auto;
+                position: relative;
+                border-radius: 20px;
+                width: 350px;
+                height: 90px;
+                box-shadow: 0px 5px 20px #999;
+                margin-top: 20px;
+                cursor: pointer;
+                text-align: left;  
+                .__h2_card_menu { //Titre des cards des menus//
+                    position: absolute;
+                    margin-top: -10px;
+                    margin-left: 10px;
+                    white-space: nowrap; 
+                    h2 {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        font-size: 1.3em;
+                    }
+                }
+                .__txt_card_menu{//Texte des cards des menus //
+                    position: absolute;
+                    margin-top: 45px;
+                    margin-left: 10px;
+                    white-space: nowrap;          
+                    p {
+                        overflow: hidden;   
+                        text-overflow: ellipsis;
+                    }    
+                }
+                .__prix_card_menu{//Prix des cards des menus//
+                    position: absolute;
+                    margin-top: 35px;
+                    margin-left: 305px;
+                }
+                .__validation_card_menu //Background de l'icone "check"//
+                {
+                    position: absolute;
+                    background-color: $couleur_Tertiaire;
+                    border-radius: 0px 20px 20px 0px;
+                    width:60px;
+                    height: 90px;
+                    margin-left: 290px;
+                    transform-origin: right;
+                    transform:scaleX(0);
+                    transition: transform 500ms ease-in-out;
+                    z-index: 1;
+                }
+                .__validation_card_menu i{//Icone check des cards des menus//
+                    color:darken($couleur_Tertiaire,50);
+                    background-color: lighten($couleur_Tertiaire,50);
+                    padding: 5px;
+                    border-radius: 50%;
+                    margin-top: 35px;
+                    margin-left:17px;
+                    filter: opacity(0);       
+                    }
+                }          
         }
 
     @keyframes anim_menu { //Animation des cards des menus au chargement //
@@ -224,7 +303,7 @@
             animation-fill-mode: forwards;
         }
         &:hover >  .__prix_card_menu{ //Décallage du prix vers la gauche lors du survol//
-            transform:translate(-45px);
+            transform:translate(-60px);
             transition-duration: 500ms;
             transition-timing-function: ease-in-out;
         }
@@ -239,6 +318,32 @@
             text-align: left;
         }
     }
+    .card_menu_1_hte{ //Card 1 du plats du délice des sens plus haute //
+        animation: anim_menu 500ms ease-in-out ;
+        &:hover > .__validation_card_menu{ //Fait apparaitre le brackground de l'icone "check" au survol"//
+        transform: scale(1);
+        }
+        &:hover > .__validation_card_menu i{ //Animation du logo check qui apparait et fait un tour au survol//
+            animation: anim_check 500ms ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        &:hover >  .__prix_card_menu{ //Décallage du prix vers la gauche lors du survol//
+            transform:translate(-60px);
+            transition-duration: 500ms;
+            transition-timing-function: ease-in-out;
+        }
+        &:hover > .__h2_card_menu { //Animation du titre de la card retrécissant au survol //
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
+            }
+        &:hover > .__txt_card_menu { //Animation du texte de la card retrécissant au survol
+            animation:anim_txt 500ms ease-in-out;
+            animation-fill-mode: forwards;
+            text-align: left;
+        }
+    }
+    
     .card_menu_2{ //Card 2ème menu//
         animation:anim_menu 500ms ease-in-out 100ms; 
         &:hover > .__validation_card_menu{ //fait apparaitre l'icone "check" au survol"//
@@ -249,7 +354,7 @@
             animation-fill-mode: forwards;
         }
         &:hover >  .__prix_card_menu{//Décallage du prix vers la gauche lors du survol//
-            transform:translate(-45px);
+            transform:translate(-60px);
             transition-duration: 500ms;
             transition-timing-function: ease-in-out;
         }
@@ -274,7 +379,7 @@
             animation-fill-mode: forwards;
         }
         &:hover >  .__prix_card_menu{//Décallage du prix vers la gauche lors du survol//
-            transform:translate(-45px);
+            transform:translate(-60px);
             transition-duration: 500ms;
             transition-timing-function: ease-in-out;
         }
@@ -299,7 +404,7 @@
             animation-fill-mode: forwards;
         }
         &:hover >  .__prix_card_menu{//Décallage du prix vers la gauche lors du survol//
-            transform:translate(-45px);
+            transform:translate(-60px);
             transition-duration: 500ms;
             transition-timing-function: ease-in-out;
         }
@@ -316,49 +421,49 @@
     }
 
     #footer{ //pied de page//
-        background-color: $couleur_tert_tt_light;
+        color: white;
+        background-color: darken($couleur_bckgrnd,70);
         text-align: center;
-        margin: auto;
         padding-top: 10px;
         padding-bottom:10px;
+        #ensemble_logo_nav{
+            margin-left: -145px;
+        }
+        #logo_footer img { //logo "ohmyfood" du pied de page//
+            height: 34px;
+            color:white;
+            margin-left:20px;
+        }
+           ul{ //Liste de navigation du pied de page//
+               display: inline-block;
+               list-style-type: none;
+               margin-left: -55px;
+               li{ //Eléments de la liste du pied de page//
+                   text-align: left;
+                   .txt_ft{ //Texte de la liste//
+                       padding-left:30px;
+                       margin-bottom: 10px;
+                       i{
+                           padding-right: 10px;
+                       }
+                   }
+                   &:hover{ // Survole d'un élément de la liste//
+                       text-decoration: underline;
+                       color: white;
+                   }
+               }
+           }
         a {  //élément de navigation du pied de page//
-            text-decoration: none;
-            color:darken($couleur_Tertiaire,50);
-         }
-        img{ //logo "ohmyfood" du footer//
-            width: 196px;
-            text-align: center;
-        }
-        #nav_ft{ //Ensemble des éléments de navigation du footer//
-            margin-left: -40px;
-        }
-        ul { //Liste des éléments de navigation du pied de page//
-            list-style-type: none;
-            display: inline-block;
-            li{ //Eléments de la liste du pied de page//
-                text-align: left;
-                margin-bottom: 5px;
-                .txt_ft{ //Text de la liste //
-                    padding-left:30px;
-                    margin-top: -18px;
-                }
-                &:hover{ // Survole d'un élément de la liste//
-                    text-decoration: underline;
-                    color:darken($couleur_Tertiaire,50);
-                }
-            }
+           text-decoration: none;
+           color: white;
         }
     }
 
     @media screen and (min-width : 1200px){ //Media queries pour ordinateur //
 
         #hdr_menu{ //Section correspondant l'en-tête des menus//
-            #__logo_menu{ //Conteneur du logo du menu//
-                margin-top: -18px;
-            }
             #__img_menu{ //Conteneur de l'image du menu//
                 height:400px;
-                background-color: $couleur_tert_tt_light;
             }
         }
             

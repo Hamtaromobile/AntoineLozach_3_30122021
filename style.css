@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-/*$couleur_tert_tt_light : lighten($couleur_Tertiaire,10%); // Couleur Tertiaire lighten background titre//
-$couleur_tert_light :lighten($couleur_Tertiaire,15%); //Couleur tertiaire lighten background _ions/articles//
-$couleur_sec_light: lighten($couleur_primaire,25%); //Couleur primaire lighten card//*/
-/*$color_ico: $couleur_Tertiaire;*/
 @keyframes load_opac {
   0% {
     filter: opacity(1);
